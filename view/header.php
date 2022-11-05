@@ -15,6 +15,7 @@
 <center>
     
 <h1>Welcome to VRMS</h1>
+<img src="VRMS.png" alt="" width="200px">
     <table>
         <tr>
             <td>

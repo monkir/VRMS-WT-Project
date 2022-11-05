@@ -64,7 +64,7 @@
                 <td style="text-align: left;">VRMS</td>
                 <td style="text-align: right;">
                     <a href="homepage.php">Home</a>|
-                    <a href="registration.php">Registratoin</a>
+                    <a href="registration.php">Registration</a>
                 </td>
             </tr>
             <tr>

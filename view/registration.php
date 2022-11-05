@@ -136,9 +136,9 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <!-- adress -->
+                                        <!-- address -->
                                         <td align="left" valign="top">
-                                            Adress:
+                                            Address:
                                         </td>
                                         <td align="left" valign="top">
                                             <textarea name="adress" rows="5" cols="30" ><?php echo $adress;?></textarea>
