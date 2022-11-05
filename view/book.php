@@ -77,10 +77,10 @@ use LDAP\Result;
                         <td align="left"><?php echo $row['distance'];?>Km</td>
                     </tr>
                   </table>
-                  <form action="../payment.php" method="get">
+                  <form action="../../controller/control_payment.php" method="post">
                     <?php $_SESSION['trip_id']=$trip_id;?>
-                    <input type="checkbox" name="book_return">Book return trip also<br>
-                    <input type="submit" value="Book Now">
+                    Select Date: <input type="date" name="trip_date"><br>
+                    <input type="submit" value="Proceed to Payment">
                   </form>
                   <?php
                 }

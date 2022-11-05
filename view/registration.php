@@ -1,6 +1,6 @@
 <?php
     //checking cookie
-    //session_start();
+    session_start();
     if(isset($_COOKIE['status']))
     {
         header("location: homepage.php?err=already_loggedin");

@@ -18,4 +18,11 @@
             return false;
         }
     }
+    function pay_and_add_trip($trip_id, $userid, $date, $price)
+    {
+        $conn = getconnection();
+        $sql = "insert into trips_histories(trip_id, passenger_id, trip_date, price) values('{$trip_id}', '{$userid}', '{$date}', '{$price}') ";
+        $result = mysqli_query($conn, $sql);
+        return $result;
+    }
 ?>
