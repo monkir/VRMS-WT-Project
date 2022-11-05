@@ -2,6 +2,7 @@
     //checking cookie
     //session_start();
     require_once "header.php";
+    $userid=$_SESSION['userid'];
     if(isset($_COOKIE['status']))
     {
         //header("location: homepage.php?err=already_loggedin");
@@ -27,48 +28,41 @@
 </head>
 <body>
     <center>
-            <a href="">See profile</a>|
+            <a href="profile.php">See profile</a>|
             <a href="trip_history.php">Trip History</a>|
             <a href="">Change Profile</a>|
             <a href="">Change Password</a>
             <?php
-                require_once '../model/user_model.php';
-                $result = getProfileDetails($userid);
+                require_once '../model/trip_model.php';
+                $result=getPassengerTripHistory($userid);
                 if ($result) 
                 {
                     // Fetch one and one row
-                    while ($row = $result->fetch_assoc()) 
-                    {
+                    
                     ?>
-                    <table>
+                    <table border="5px">
                         <tr>
-                            <th align="right">User ID:</th>
-                            <td align="left"><?php echo $row['userid'];?></td>
+                            <th>Trip History ID</th>
+                            <th>Trip ID</th>
+                            <th>Trip Date</th>
+                            <th>Price</th>
                         </tr>
+                        <?php
+                        while ($row = $result->fetch_assoc()) 
+                        {
+                        ?>
                         <tr>
-                            <th align="right">User type:</th>
-                            <td align="left"><?php echo $row['usertype'];?></td>
+                            <td><?php echo $row['th_id']?></th>
+                            <td><?php echo $row['trip_id']?></th>
+                            <td><?php echo $row['trip_date']?></th>
+                            <td><?php echo $row['price']?></th>
                         </tr>
-                        <tr>
-                            <th align="right">Name:</th>
-                            <td align="left"><?php echo $row['name'];?></td>
-                        </tr>
-                        <tr>
-                            <th align="right">Email:</th>
-                            <td align="left"><?php echo $row['email'];?></td>
-                        </tr>
-                        <tr>
-                            <th align="right">Contact:</th>
-                            <td align="left"><?php echo $row['contact'];?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                Address: <?php echo $row['adress'];?>
-                            </td>
-                        </tr>
+                        <?php
+                        }
+                        ?>
+
                     </table>
                     <?php
-                    }
                     mysqli_free_result($result);
                 }
                 else
@@ -79,5 +73,7 @@
                 }
             ?>
     </center>
+    
+
 </body>
 </html>

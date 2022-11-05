@@ -23,6 +23,17 @@
         $conn = getconnection();
         $sql = "insert into trips_histories(trip_id, passenger_id, trip_date, price) values('{$trip_id}', '{$userid}', '{$date}', '{$price}') ";
         $result = mysqli_query($conn, $sql);
+        // Closing database connection
+        $conn->close();
+        return $result;
+    }
+    function getPassengerTripHistory($userid)
+    {
+        $conn = getconnection();
+        $sql = "select * from trips_histories where passenger_id='{$userid}'";
+        $result = mysqli_query($conn, $sql);
+        // Closing database connection
+        $conn->close();
         return $result;
     }
 ?>

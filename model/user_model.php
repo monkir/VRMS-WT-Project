@@ -70,5 +70,15 @@
         $conn->close();
         return $result;
     }
+    function getProfileDetails($userid)
+    {
+        $conn = getconnection();
+        $sql = "select * from users where userid='{$userid}'";
+        $result = mysqli_query($conn, $sql);
+        //$count = mysqli_num_rows($result);
+        // Closing database connection
+        $conn->close();
+        return $result;
+    }
 
 ?>

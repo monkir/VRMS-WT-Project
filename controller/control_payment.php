@@ -51,6 +51,7 @@
         if($result2)
         {
             echo "Payment done";
+            header("location: ../view/profile.php");
         }
         
 

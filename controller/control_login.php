@@ -17,8 +17,8 @@
         $_SESSION['userid']=$userid;
         if (isset($_POST['remember']))
         {
-            setcookie("status", "active", time()+3600);
-            setcookie("vrms_user", $userid, time()+3600);
+            setcookie("status", "active", time()+3600, '/');
+            setcookie("userid", $userid, time()+3600, '/');
         }
         header("location: ../view/homepage.php");
     }

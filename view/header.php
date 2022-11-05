@@ -4,7 +4,7 @@
     if(isset($_COOKIE['status']))
     {
         $status=$_COOKIE['status'];
-        $name=$_COOKIE['user']['name'];
+        $userid=$_COOKIE['userid'];
     }
     else if(isset($_SESSION['status']))
     {
