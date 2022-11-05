@@ -1,0 +1,2 @@
+userid: akash, password: akash123, usertype: passenger, status: active, name: Monkir Chowdhury, email: monkirchowdhury@gmail.com, contact: 01531190845, adress: asdfdf
+userid: rabbi, password: rabbi123, usertype: passenger, status: active, name: Monkir Chowdhury, email: monkirchowdhury@gmail.com, contact: 01531190845, adress: sadfsdf

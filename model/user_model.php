@@ -16,8 +16,12 @@
         $con->close();
 		if($result)
         {
-            $history_details="userid: {$userid}, password: {$password}, usertype: {$usertype}, status: {$status}, name: {$name}, email: {$email}, contact: {$contact}, adress: {$adress}";
+            $history_details="userid: {$userid}, password: {$password}, usertype: {$usertype}, status: {$status}, name: {$name}, email: {$email}, contact: {$contact}, adress: {$adress}\n";
             addHistory($userid, "registration", $history_details);
+            //storing to file
+            $myfile = fopen("../history_details.txt", "a") or die("Unable to open file!");
+            fwrite($myfile, $history_details);
+            fclose($myfile);
 			return true;
 		}
         else
