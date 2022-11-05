@@ -1,22 +1,17 @@
 <?php
-    $status="";
     $name="";
     $errorMessage="";
-    session_start();
-    if(isset($_COOKIE['status']))
-    {
-        $status=$_COOKIE['status'];
-        $name=$_COOKIE['user']['name'];
-    }
-    else if(isset($_SESSION['status']))
-    {
-        $status=$_SESSION['status'];
-        $userid=$_SESSION['userid'];
-    }
+    
     if(isset($_GET['err']))
     {
         if($_GET['err']=='already_loggedin')
-        $errorMessage= "Already Logged In!";
+        {
+            $errorMessage= "Already Logged In!";
+        }
+        else if($_GET['err']=='bad_request')
+        {
+            $errorMessage= "Bad Request!";
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -32,81 +27,48 @@
         <span style="color: red;">
             <?php echo $errorMessage ?><br>
         </span>
-        Welcome to VRMS
-        <table>
+        <?php require_once 'header.php'; ?>
+        
+        <?php 
+            require_once '../model/user_model.php'; 
+            $result = getAvailableTrip();
+        ?>
+        <table border="3px">
             <tr>
-                <td>
-                    <a href="homepage.php">Home</a>|
-                    <?php
-                        if($status=="")
-                        {
-                            ?>
-                            <a href="login.php">Login</a>|
-                            <?php
-                        }
-                        else
-                        {
-                            echo "Logged in as ". $userid." | ";
-                        }
-                    ?>
-                    <?php
-                        if($status=="")
-                        {
-                            ?>
-                            <a href="registration.php">Registration</a>
-                            <?php
-                        }
-                        else
-                        {
-                            ?>
-                            <a href="logout.php">logout</a>
-                            <?php
-                        }
-                    ?>
-                </td>
+                <th style="width: 100px;">Trip ID</th>
+                <th style="width: 100px;">From</th>
+                <th style="width: 100px;">To</th>
+                <th style="width: 100px;">Distance</th>
+                <th style="width: 100px;">Price</th>
             </tr>
+            <?php
+                if ($result->num_rows > 0) 
+                {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) 
+                    {
+                        ?>
+                        <tr>
+                            <td><?php echo $row["trip_id"]; ?></td>
+                            <td><?php echo $row["departure"]; ?></td>
+                            <td><?php echo $row["destination"]; ?></td>
+                            <td><?php echo $row["distance"]; ?></td>
+                            <td><?php echo $row["price"]; ?></td>
+                            <td style="width: 100px;">
+                                <a href="<?php echo "book.php/?tripid=".$row["trip_id"];?>">
+                                    Book
+                                </a>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                } 
+                else 
+                {
+                    echo "0 results";
+                }
+            ?>
         </table>
-        <form action="">
-            <table>
-                <tr>
-                    <td>From</td>
-                    <td>
-                    <select name="departure" id="departure">
-                        <option value="Dhaka">Dhaka</option>
-                        <option value="Chittagong">Chittagong</option>
-                        <option value="Barishal">Barishal</option>
-                        <option value="Rajshahi">Rajshahi</option>
-                        <option value="Sylhet">Sylhet</option>
-                        <option value="Rangpur">Rangpur</option>
-                    </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>To</td>
-                    <td>
-                    <select name="destination" id="destination">
-                        <option value="Dhaka">Dhaka</option>
-                        <option value="Chittagong">Chittagong</option>
-                        <option value="Barishal">Barishal</option>
-                        <option value="Rajshahi">Rajshahi</option>
-                        <option value="Sylhet">Sylhet</option>
-                        <option value="Rangpur">Rangpur</option>
-                    </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Date</td>
-                    <td>
-                        <input type="date">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="middle">
-                        <input type="submit" name="book" value="Book">
-                    </td>
-                </tr>
-            </table>
-        </form>
         
     </center>
     

@@ -1,5 +1,5 @@
 <?php
-    include "../model/user_model.php";
+    require_once "../model/user_model.php";
     function gotoRegistraionPage()
     {
         global $name,$email,$contact,$adress,$userid,$password,$cpassword;

@@ -1,13 +1,15 @@
 <?php
     //checking cookie
+    //session_start();
     if(isset($_COOKIE['status']))
     {
-        header("location: homapage.php");
+        header("location: homepage.php?err=already_loggedin");
     }
     //checking sessoin
     else if(isset($_SESSION['status']))
     {
-        header("location: homapage.php");
+        echo "hi";
+        header("location: homepage.php?err=already_loggedin");
     }
     //declaring variables for all input data
     $name=$email=$contact=$adress=$userid=$password=$cpassword="";
@@ -18,7 +20,7 @@
     {
         if($_GET['err'] == 'invalid')
         {
-            session_start();
+            //session_start();
             //input values
             if(isset($_SESSION['name']))
             {

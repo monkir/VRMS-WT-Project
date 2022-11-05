@@ -1,9 +1,10 @@
 <?php
     //checking cookie
+    $requestMessage="";
     session_start();
     if(isset($_COOKIE['status']))
     {
-        header("location: homapage.php");
+        header("location: homepage.php?err=already_loggedin");
     }
     //checking sessoin
     else if(isset($_SESSION['status']))
@@ -38,6 +39,13 @@
             }
         }
     }
+    else if(isset($_GET['request']))
+    {
+        if($_GET['request']=="login")
+        {
+            $requestMessage="Please log in first";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,6 +57,7 @@
 </head>
 <body>
     <center>
+        <span style="color: red;"><?php echo $requestMessage;?></span><br>
         Welcome to VRMS
         <table>
             <tr>

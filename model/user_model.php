@@ -1,5 +1,5 @@
 <?php
-    include 'db.php';
+    require_once 'db.php';
     // Add passenger ID method
     function passengerRegistration($name, $email, $contact, $adress, $userid, $password)
     {
@@ -59,6 +59,16 @@
         {
             return false;
         }
+    }
+    function getAvailableTrip()
+    {
+        $conn = getconnection();
+        $sql = "select * from trips";
+        $result = mysqli_query($conn, $sql);
+        //$count = mysqli_num_rows($result);
+        // Closing database connection
+        $conn->close();
+        return $result;
     }
 
 ?>
