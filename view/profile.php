@@ -27,18 +27,10 @@
 </head>
 <body>
     <center>
-        <p>
-            <a href="">See profile</a>
-        </p>
-        <p>
-            <a href="">Trip History</a>
-        </p>
-        <p>
-            <a href="">Change Profile</a>
-        </p>
-        <p>
+            <a href="">See profile</a>|
+            <a href="">Trip History</a>|
+            <a href="">Change Profile</a>|
             <a href="">Change Password</a>
-        </p>
     </center>
 </body>
 </html>
