@@ -29,6 +29,26 @@
 			return false;
 		}
     }
+    function passengerResetPassword($userid, $old_password, $new_password)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Inserting data into login table
+        $sql= "UPDATE users SET password = '{$new_password}' WHERE userid='{$userid}' and password='{$old_password}'";
+        echo $sql. "<br>";
+        $result=mysqli_query($con, $sql);
+        
+        // Closing database connection
+        $con->close();
+		if($result)
+        {
+			return true;
+		}
+        else
+        {
+			return false;
+		}
+    }
     function login($userid, $password)
     {
         $conn = getconnection();

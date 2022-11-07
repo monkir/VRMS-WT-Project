@@ -33,7 +33,7 @@
         <img src="<?php echo $user_profile_image;?>" alt="" width="200px"><br>
         <h1>Previous Profile Picture</h1> <br><br>
         <form action="../controller/control_change_image.php" method="post" enctype="multipart/form-data">
-        <h1>Select image to Change Profile Picture : </h1><br>
+        <h1>Select an image to Change Profile Picture : </h1><br>
         <input type="file" name="fileToUpload" id="fileToUpload"><br>
         <input type="submit" value="Upload Image" name="submit"><br>
         </form>

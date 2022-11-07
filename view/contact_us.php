@@ -11,7 +11,10 @@
                 <img src="email-logo.jpg" alt=""><br><br>
             </td>
             <td>
-                Email: <a href="">contact@vrms.com</a><br>
+                <h1>
+                    Email: <a href="">contact@vrms.com</a><br>
+                </h1>
+                
             </td>
         </tr>
         <tr>
@@ -19,10 +22,13 @@
                 <img src="hotline-logo.png" alt="">
             </td>
             <td>
-                Hotline: <a href="">554433</a>
+                <h1>
+                    Hotline: <a href="">554433</a>
+                </h1>
             </td>
         </tr>
     </table>
+    <h1 style="color: red;">Don't Fell Hesitate to Contact US</h1>
     </center>
 
 </p>

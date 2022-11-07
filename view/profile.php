@@ -16,6 +16,12 @@
     {
         header("location: ../homepage.php?err=bad_request");
     }
+    $message="";
+    if(isset($_SESSION['message']))
+    {
+        $message=$_SESSION['message'];
+        $_SESSION['message']="";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +33,9 @@
 </head>
 <body>
     <center>
+        <span style="color: red;"><?php echo $message;?></span><br>
+        <h1>
+            
             <?php
                 require_once 'user_header.php';
                 require_once '../model/user_model.php';
@@ -37,6 +46,7 @@
                     while ($row = $result->fetch_assoc()) 
                     {
                     ?>
+                    <img src="<?php echo $user_profile_image;?>" alt="<?php echo $user_profile_image;?>" width="200px"><br>
                     <table>
                         <tr>
                             <th align="right">User ID:</th>
@@ -75,6 +85,7 @@
                     <?php
                 }
             ?>
+        </h1>
     </center>
     <?php require_once 'footer.php'; ?>
 </body>

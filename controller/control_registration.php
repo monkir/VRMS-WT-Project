@@ -142,7 +142,7 @@
             }
             else if (strlen ($password) < 8) 
             {  
-                $contactErr = "Password must contain at least 8 digits.";  
+                $passwordErr = "Password must contain at least 8 digits.";  
             } 
         }
         //Confirm password validation
