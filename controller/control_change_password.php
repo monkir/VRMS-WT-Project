@@ -31,13 +31,6 @@
     if(isset($_POST['trip_date']))
     {
         $trip_date=date('Y-m-d', strtotime($_POST['trip_date']));
-        $current_date=date("Y-m-d");
-        if($trip_date < $current_date)
-        {
-            echo "wrong date";
-            $status = false;
-            header("location: ../view/book.php?tripid={$trip_id}&err=wrong_date");
-        }
     }
     else
     {
@@ -55,8 +48,7 @@
             if($result2)
             {
                 echo "Payment done";
-                echo $trip_date;
-                //header("location: ../view/profile.php");
+                header("location: ../view/profile.php");
             }
         }
     }

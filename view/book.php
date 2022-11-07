@@ -5,6 +5,7 @@ use LDAP\Result;
     require_once 'header.php';
     //checking cookie
     $trip_id="";
+    $error="";
     if(isset($_COOKIE['status']))
     {
         //header("location: homepage.php?err=already_loggedin");
@@ -31,7 +32,15 @@ use LDAP\Result;
     }
     else
     {
-        header("location: ../login.php?request=login");
+        header("location: login.php?request=login");
+    }
+    if(isset($_GET['err']))
+    {
+        $error=$_GET['err'];
+        if($error=="wrong_date")
+        {
+            $error="Please select a valid date.";
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -44,6 +53,7 @@ use LDAP\Result;
 </head>
 <body>
     <center>
+        
         <?php 
             //echo "Trip id: ".$trip_id."<br>"; 
             echo '<br><br>';
@@ -77,9 +87,10 @@ use LDAP\Result;
                         <td align="left"><?php echo $row['distance'];?>Km</td>
                     </tr>
                   </table>
-                  <form action="../../controller/control_payment.php" method="post">
+                  <form action="../controller/control_payment.php" method="post">
                     <?php $_SESSION['trip_id']=$trip_id;?>
                     Select Date: <input type="date" name="trip_date"><br>
+                    <span style="color: red;"><?php echo $error;?></span><br>
                     <input type="submit" value="Proceed to Payment">
                   </form>
                   <?php

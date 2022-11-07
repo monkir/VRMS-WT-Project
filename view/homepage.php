@@ -55,9 +55,9 @@
                             <td><?php echo $row["distance"]; ?></td>
                             <td><?php echo $row["price"]; ?></td>
                             <td style="width: 100px;">
-                                <a href="<?php echo "book.php/?tripid=".$row["trip_id"];?>">
-                                    Book
-                                </a>
+                                <form action="book.php">
+                                    <button name="tripid" value="<?php echo $row["trip_id"];?>">Book</button>
+                                </form>
                             </td>
                         </tr>
                         <?php

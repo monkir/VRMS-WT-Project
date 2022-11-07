@@ -30,7 +30,9 @@
     function getPassengerTripHistory($userid)
     {
         $conn = getconnection();
-        $sql = "select * from trips_histories where passenger_id='{$userid}'";
+        $sql = "select th.th_id, th.trip_id, tp.departure, tp.destination, th.trip_date, th.price from trips_histories th, trips tp 
+            where th.passenger_id='{$userid}' AND tp.trip_id = th.trip_id";
+
         $result = mysqli_query($conn, $sql);
         // Closing database connection
         $conn->close();

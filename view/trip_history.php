@@ -44,6 +44,8 @@
                         <tr>
                             <th>Trip History ID</th>
                             <th>Trip ID</th>
+                            <th>Departure</th>
+                            <th>Destination</th>
                             <th>Trip Date</th>
                             <th>Price</th>
                         </tr>
@@ -54,6 +56,8 @@
                         <tr>
                             <td><?php echo $row['th_id']?></th>
                             <td><?php echo $row['trip_id']?></th>
+                            <td><?php echo $row['departure']?></th>
+                            <td><?php echo $row['destination']?></th>
                             <td><?php echo $row['trip_date']?></th>
                             <td><?php echo $row['price']?></th>
                         </tr>
@@ -73,6 +77,7 @@
                 }
             ?>
     </center>
+    <?php require_once 'footer.php'; ?>
     
 
 </body>
