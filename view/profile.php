@@ -27,11 +27,8 @@
 </head>
 <body>
     <center>
-            <a href="">See profile</a>|
-            <a href="trip_history.php">Trip History</a>|
-            <a href="">Change Profile</a>|
-            <a href="">Change Password</a>
             <?php
+                require_once 'user_header.php';
                 require_once '../model/user_model.php';
                 $result = getProfileDetails($userid);
                 if ($result) 

@@ -28,11 +28,8 @@
 </head>
 <body>
     <center>
-            <a href="profile.php">See profile</a>|
-            <a href="trip_history.php">Trip History</a>|
-            <a href="">Change Profile</a>|
-            <a href="">Change Password</a>
             <?php
+                require_once 'user_header.php';
                 require_once '../model/trip_model.php';
                 $result=getPassengerTripHistory($userid);
                 if ($result) 

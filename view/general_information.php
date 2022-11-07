@@ -3,6 +3,12 @@
 ?>
 <p>
     <center>
+        <h1>
+            In VRMS Project <br>
+            We used 4 types of users <br>
+            Their Attribute and Functions are given below <br>
+        </h1>
+        
     <table border="5px">
         <tr>
             <th>Admin</th>
@@ -12,13 +18,13 @@
         </tr>
         <>
             <td valign="top">
-                Attribute:
+                <h2>Attribute:</h2>
                 <ul>
                     <li>String name</li>
                     <li>String id</li>
                     <li>String password</li>
                 </ul>
-                Methods:
+                <h2>Methods:</h2>
                 <ul>
                     <li>void add_employee()</li>
                     <li>void remove_employee()</li>
@@ -29,13 +35,13 @@
                 </ul>
             </td>
             <td valign="top">
-            Attribute:
+                <h2>Attribute:</h2>
                 <ul>
                     <li>String name</li>
                     <li>String id</li>
                     <li>String password</li>
                 </ul>
-                Methods:
+                <h2>Methods:</h2>
                 <ul>
                     <li>void add_passanger()</li>
                     <li>void remove_Passenger()</li>
@@ -51,7 +57,7 @@
                 </ul>
             </td>
             <td valign="top">
-            Attribute:
+                <h2>Attribute:</h2>
                 <ul>
                     <li>String name</li>
                     <li>String id</li>
@@ -62,7 +68,7 @@
                     <li>string gender</li>
                     <li></li>
                 </ul>
-                Methods:
+                <h2>Methods:</h2>
                 <ul>
                     <li>void requestTrip</li>
                     <li>void cancelTrip</li>
@@ -73,7 +79,7 @@
             </td>
 
             <td valign="top">
-            Attribute:
+                <h2>Attribute:</h2>
                 <ul>
                     <li>String name</li>
                     <li>String id</li>
@@ -81,7 +87,7 @@
                     <li>string address</li>
                     <li>string contact</li>
                 </ul>
-                Methods:
+                <h2>Methods:</h2>
                 <ul>
                     <li>void acceptTrip()</li>
                     <li>void rejectTrip()</li>

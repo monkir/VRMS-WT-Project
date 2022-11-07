@@ -1,5 +1,7 @@
 <?php
     $status="";
+    $userid="";
+    $user_profile_image="";
     session_start();
     if(isset($_COOKIE['status']))
     {
@@ -11,6 +13,18 @@
         $status=$_SESSION['status'];
         $userid=$_SESSION['userid'];
     }
+    if(file_exists("profile_image/{$userid}.png"))
+    {
+        $user_profile_image="profile_image/{$userid}.png";
+    }
+    else if(file_exists("profile_image/{$userid}.jpg"))
+    {
+        $user_profile_image="profile_image/{$userid}.jpg";
+    }
+    else
+    {
+        $user_profile_image="user-logo.png";
+    }
 ?>
 <center>
     
@@ -20,23 +34,21 @@
         <tr>
             <td>
                 <h2>
-                    <a href="homepage.php">Home</a>
-                </h2>
-            </td>
-            <td style="width: 500px;" align="right" valign="top">
-                <h2>
-                    <img src="user-logo.png" width="40px" alt="">
+                    <a href="homepage.php">Home</a>|
                     <?php
                         if($status=="")
                         {
                             ?>
-                            <a href="login.php">Login</a>|
+                            <a href="login.php">
+                                Login
+                            </a>|
                             <?php
                         }
                         else
                         {
                             ?>
                             <a href="profile.php">
+                                <img src="<?php echo $user_profile_image ?>" width="40px" alt="" style="border-radius: 50%;">
                                 <?php echo $userid." | "; ?>
                             </a>
                             <?php

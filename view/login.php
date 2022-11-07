@@ -58,7 +58,8 @@
 <body>
     <center>
         <span style="color: red;"><?php echo $requestMessage;?></span><br>
-        Welcome to VRMS
+        <h1>Welcome to VRMS</h1>
+        <img src="VRMS.png" alt="" width="100px">
         <table>
             <tr>
                 <td style="text-align: left;">VRMS</td>
