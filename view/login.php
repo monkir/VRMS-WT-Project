@@ -101,6 +101,9 @@
                 </td>
             </tr>
         </table>
+        <?php
+            require_once 'footer.php';
+        ?>
     </center>
 </body>
 </html>
