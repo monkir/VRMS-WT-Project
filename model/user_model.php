@@ -49,6 +49,27 @@
 			return false;
 		}
     }
+    function forgot_and_reset_password($userid, $email, $contact, $password)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Inserting data into login table
+        $sql= "UPDATE users SET password = '{$password}' WHERE 
+                userid='{$userid}' and email = '{$email}' and contact = '{$contact}'";
+        echo $sql. "<br>";
+        $result=mysqli_query($con, $sql);
+        
+        // Closing database connection
+        $con->close();
+		if($result)
+        {
+			return true;
+		}
+        else
+        {
+			return false;
+		}
+    }
     function login($userid, $password)
     {
         $conn = getconnection();
@@ -103,6 +124,38 @@
         // Closing database connection
         $conn->close();
         return $result;
+    }
+    function is_valid_email($userid, $email)
+    {
+        $conn = getconnection();
+        $sql = "select * from users where userid='{$userid}' and email='{$email}'";
+        $result = mysqli_query($conn, $sql);
+        $count = mysqli_num_rows($result);
+        $conn->close();
+        if($count==1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    function is_valid_contact($userid, $contact)
+    {
+        $conn = getconnection();
+        $sql = "select * from users where userid='{$userid}' and contact='{$contact}'";
+        $result = mysqli_query($conn, $sql);
+        $count = mysqli_num_rows($result);
+        $conn->close();
+        if($count==1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 ?>

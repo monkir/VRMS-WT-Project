@@ -95,7 +95,7 @@
                                 <hr>
                                 <input type="checkbox" name="remember">Remember Me <br>
                                 <input type="submit" name="submit">
-                                <a href="resetpass.php">Forot Password?</a>
+                                <a href="reset_password.php">Forot Password?</a>
                             </fieldset>
                         </form>
                     </center>

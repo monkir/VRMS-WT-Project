@@ -179,7 +179,6 @@
                                 </table>
                                 <hr>
                                 <input type="submit" name="submit">
-                                <a href="">Forot Password?</a>
                             </fieldset>
                         </form>
                     </center>

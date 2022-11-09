@@ -3,3 +3,4 @@ userid: rabbi, password: rabbi123, usertype: passenger, status: active, name: Mo
 userid: rad12, password: rad12345, usertype: passenger, status: active, name: Rad SHahamat Akash, email: rad@aiub.edu, contact: 01611612122, adress: Kuratoli
 userid: muzahid123, password: monkir123, usertype: passenger, status: active, name: Md Muzahidul Islam, email: m.hanif@northsouth.edu, contact: 01745871050, adress: Motijheel
 userid: najabat, password: vrms2020, usertype: passenger, status: active, name: Najabat Chowdhury Anaf, email: najabat@gmail.com, contact: 01537894561, adress: North Kamalapur
+userid: ismailsir, password: aiub1234, usertype: passenger, status: active, name: Md Ismail Hossain, email: md.ismail@aiub.edu, contact: 01651654561, adress: Kazi Bari, Kuratoli, Kuril Bishwaroad, Dhaka, Bangladesh

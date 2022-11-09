@@ -73,5 +73,9 @@
             gotoLoginPage();
         }
     }
+    else
+    {
+        header("location: ../view/homepage.php?err=bad_request");
+    }
 
 ?>

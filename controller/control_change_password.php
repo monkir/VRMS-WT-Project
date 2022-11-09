@@ -67,6 +67,10 @@
             //echo "invalid";
         }
     }
+    else
+    {
+        header("location: ../view/homepage.php?err=bad_request");
+    }
     function goto_profile_page()
     {
         $userid = $_SESSION['userid'];

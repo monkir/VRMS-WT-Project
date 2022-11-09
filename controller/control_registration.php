@@ -23,11 +23,11 @@
         $_SESSION['cpasswordErr']=$cpasswordErr;
         header("location: ../view/registration.php?err=invalid");
     }
-    function goto_hompage()
+    function goto_loginpage()
     {
         session_start();
         session_unset();
-        header("location: ../view/homepage.php");
+        header("location: ../view/login.php");
     }
     //test input function
     function test_input($data) 
@@ -166,7 +166,7 @@
         {
             if(passengerRegistration($name, $email, $contact, $adress, $userid, $password))
             {
-                goto_hompage();
+                goto_loginpage();
             }
         }
         else
@@ -174,5 +174,9 @@
             gotoRegistraionPage();
             //echo "invalid";
         }
-}
+    }
+    else
+    {
+        header("location: ../view/homepage.php?err=bad_request");
+    }
 ?>
