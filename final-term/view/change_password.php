@@ -72,50 +72,42 @@ use LDAP\Result;
 <center>
     <?php require_once 'user_header.php'; ?>
     <span style="color: red;"><?php echo $error;?></span><br>
-    <table>
-        <tr>
-            <td colspan="2">
-                <center>
-                    <form action="../controller/control_change_password.php" method="POST">
-                        <fieldset>
-                            <legend>Change Password Form</legend>
-                            <table>
-                                <!-- For Old Password -->
-                                <tr>
-                                    <td align="left" valign="top">Old Password: </td>
-                                    <td align="left" valign="top">
-                                        <input type="password" name="old_password" value="<?php echo $old_password;?>">
-                                        <span style="color: red;">*</span><br>
-                                        <span style="color: red;"><?php echo $old_passwordErr;?></span>
-                                    </td>
-                                </tr>
-                                <!-- For New Password -->
-                                <tr>
-                                    <td align="left" valign="top">New Password: </td>
-                                    <td align="left" valign="top">
-                                        <input type="password" name="new_password" value="<?php echo $new_password;?>">
-                                        <span style="color: red;">*</span><br>
-                                        <span style="color: red;"><?php echo $new_passwordErr;?></span>
-                                    </td>
-                                </tr>
-                                <!-- For New Confirm Password -->
-                                <tr>
-                                    <td align="left" valign="top">New Password again: </td>
-                                    <td align="left" valign="top">
-                                        <input type="password" name="new_cpassword" value="<?php echo $new_cpassword;?>">
-                                        <span style="color: red;">*</span><br>
-                                        <span style="color: red;"><?php echo $new_cpasswordErr;?></span>
-                                    </td>
-                                </tr>
-                            </table>
-                            <hr>
-                            <button name="submit">Change Password</button>
-                        </fieldset>
-                    </form>
-                </center>
-            </td>
-        </tr>
-    </table>
+    <form action="../controller/control_change_password.php" method="POST">
+        <fieldset>
+            <legend>Change Password Form</legend>
+            <table>
+                <!-- For Old Password -->
+                <tr>
+                    <td align="left" valign="top">Old Password: </td>
+                    <td align="left" valign="top">
+                        <input type="password" name="old_password" value="<?php echo $old_password;?>">
+                        <span style="color: red;">*</span><br>
+                        <span style="color: red;"><?php echo $old_passwordErr;?></span>
+                    </td>
+                </tr>
+                <!-- For New Password -->
+                <tr>
+                    <td align="left" valign="top">New Password: </td>
+                    <td align="left" valign="top">
+                        <input type="password" name="new_password" value="<?php echo $new_password;?>">
+                        <span style="color: red;">*</span><br>
+                        <span style="color: red;"><?php echo $new_passwordErr;?></span>
+                    </td>
+                </tr>
+                <!-- For New Confirm Password -->
+                <tr>
+                    <td align="left" valign="top">New Password again: </td>
+                    <td align="left" valign="top">
+                        <input type="password" name="new_cpassword" value="<?php echo $new_cpassword;?>">
+                        <span style="color: red;">*</span><br>
+                        <span style="color: red;"><?php echo $new_cpasswordErr;?></span>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <button name="submit">Change Password</button>
+        </fieldset>
+    </form>
     <?php
         require_once 'footer.php';
     ?>

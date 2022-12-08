@@ -58,22 +58,16 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+        require_once 'header.php';
+    ?>
     <center>
         <span style="color: red;"><?php echo $requestMessage;?></span><br>
-        <h1>Welcome to VRMS</h1>
-        <img src="VRMS.png" alt="" width="100px">
         <table>
-            <tr>
-                <td style="text-align: left;">VRMS</td>
-                <td style="text-align: right;">
-                    <a href="homepage.php">Home</a>|
-                    <a href="registration.php">Registration</a>
-                </td>
-            </tr>
             <tr>
                 <td colspan="2">
                     <center>
-                        <form action="../controller/control_login.php" method="POST" onsubmit="return validateLoginForm();">
+                        <form class="login" action="../controller/control_login.php" method="POST" onsubmit="return validateLoginForm();">
                         <!--form action="" method="POST" onsubmit="return validateLoginForm()"-->
                             <fieldset>
                                 <legend>Login</legend>

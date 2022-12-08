@@ -3,6 +3,14 @@
 }
 a{
     color: brown;
+    font-style: normal;
+    background-color: none;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+}
+a:hover{
+    background-color: white;
 }
 .all-header-container{
     display: flex;
@@ -24,7 +32,7 @@ a{
 }
 .all-header-container a{
     color: black;
-    background-color: aqua;
+    /* background-color: aqua; */
     padding: 2px;
     padding-left: 5px;
     padding-right: 5px;
@@ -62,9 +70,12 @@ a{
 }
 .all-footer-item *{
     color: white;
+    padding: 5px;
+    border-radius: 25px;
 }
 .all-footer-item a:hover{
-    color: black;
+    color: yellow;
+    background-color: blue;
 }
 body
 {
@@ -77,4 +88,27 @@ body
 }
 .err{
     color: red;
+}
+input{
+    border-radius: 25px;
+}
+form.login *{
+    font-size: 30px;
+    background-color: rgb(193, 163, 194);
+}
+form.login input{
+    background-color: aliceblue;
+}
+table{
+    border: 2px black solid ;
+    border-collapse: collapse;
+}
+table tr{
+    background-color: orange;
+}
+table tr:nth-child(even){
+    background-color: orangered;
+}
+table td{
+    color: white;
 }

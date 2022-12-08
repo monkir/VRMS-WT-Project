@@ -22,6 +22,21 @@
         }
         header("location: ../view/homepage.php");
     }
+    function goto_adminview()
+    {
+        global $userid;
+        session_start();
+        $_SESSION['status']=$userid;
+        $_SESSION['usertype']='admin';
+        $_SESSION['userid']=$userid;
+        if (isset($_POST['remember']))
+        {
+            setcookie("status", "active", time()+3600, '/');
+            setcookie("usertype", "admin", time()+3600, '/');
+            setcookie("userid", $userid, time()+3600, '/');
+        }
+        header("location: ../view/admin/adminview.php");
+    }
     function test_input($data) 
     {
         $data = trim($data);
@@ -57,9 +72,18 @@
         if($useridErr=="" && $passwordErr=="")
         {
             include "../model/user_model.php";
-            if(login($userid, $password))
+            if($usertype = login($userid, $password))
             {
-                goto_hompage();
+                if($usertype=='passenger')
+                {
+                    goto_hompage();
+                }
+                elseif($usertype=='admin')
+                {
+                    echo "You are logged as an admin";
+                    //header('location: ../view/admin/adminview.php');
+                    goto_adminview();
+                }
             }
             else
             {

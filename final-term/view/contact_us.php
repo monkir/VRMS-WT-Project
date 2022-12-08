@@ -13,23 +13,20 @@
 <body>
         <p>
         <center>
-        
-        
         <table>
             <tr>
                 <td>
-                    <img src="email-logo.jpg" alt=""><br><br>
+                    <img src="image/email-logo.jpg" alt=""><br><br>
                 </td>
                 <td>
                     <h1>
                         Email: <a href="">contact@vrms.com</a><br>
                     </h1>
-                    
                 </td>
             </tr>
             <tr>
                 <td>
-                    <img src="hotline-logo.png" alt="">
+                    <img src="image/hotline-logo.png" alt="">
                 </td>
                 <td>
                     <h1>

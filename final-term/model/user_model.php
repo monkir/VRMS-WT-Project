@@ -80,13 +80,15 @@
         $conn->close();
         if($count == 1)
         {
+            $row = $result->fetch_assoc();
+            $usertype = $row['usertype'];
+            return $usertype;
             return true;
         }else
         {
             return false;
         }
     }
-    
     function userid_exists($userid)
     {
         $conn = getconnection();

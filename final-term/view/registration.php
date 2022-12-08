@@ -93,100 +93,89 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+        require_once 'header.php';
+    ?>
     <center>
         <h1>Welcome to VRMS</h1>
         <img src="VRMS.png" alt="" width="100px">
-        <table>
-            <tr>
-                <td style="text-align: left;">VRMS</td>
-                <td style="text-align: right;">
-                    <a href="homepage.php">Home</a>|
-                    <a href="login.php">Log in</a>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <center>
-                        <form action="../controller/control_registration.php" method="POST">
-                            <fieldset>
-                                <legend>Registration</legend>
-                                <table>
-                                    <tr>
-                                        <!-- Name -->
-                                        <td align="left" valign="top">Name: </td>
-                                        <td align="left">
-                                            <input type="text" name="name" value="<?php echo $name;?>">
-                                            <span style="color: red;">*</span><br>
-                                            <span style="color: red;"><?php echo $nameErr;?></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Email -->
-                                        <td align="left" valign="top">Email: </td>
-                                        <td align="left" valign="top">
-                                            <input type="text" name="email" value="<?php echo $email;?>">
-                                            <span style="color: red;">*</span><br>
-                                            <span style="color: red;"><?php echo $emailErr;?></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- contact -->
-                                        <td align="left" valign="top">contact: </td>
-                                        <td align="left" valign="top">
-                                            <input type="text" name="contact" value="<?php echo $contact;?>">
-                                            <span style="color: red;">*</span><br>
-                                            <span style="color: red;"><?php echo $contactErr;?></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- address -->
-                                        <td align="left" valign="top">
-                                            Address:
-                                        </td>
-                                        <td align="left" valign="top">
-                                            <textarea name="adress" rows="5" cols="30" ><?php echo $adress;?></textarea>
-                                            <span style="color: red;">
-                                                *<br>
-                                                <?php echo $adressErr;?>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- userid -->
-                                        <td align="left" valign="top">Choose User ID: </td>
-                                        <td align="left">
-                                            <input type="text" name="userid" value="<?php echo $userid;?>">
-                                            <span style="color: red;">*</span><br>
-                                            <span style="color: red;"><?php echo $useridErr;?></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- password -->
-                                        <td align="left" valign="top">Password: </td>
-                                        <td align="left" valign="top">
-                                            <input type="password" name="password" value="<?php echo $password;?>">
-                                            <span style="color: red;">*</span><br>
-                                            <span style="color: red;"><?php echo $passwordErr;?></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- cpassword -->
-                                        <td align="left" valign="top">Confirm password: </td>
-                                        <td align="left" valign="top">
-                                            <input type="password" name="cpassword" value="<?php echo $cpassword;?>">
-                                            <span style="color: red;">*</span><br>
-                                            <span style="color: red;"><?php echo $cpasswordErr;?></span>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <hr>
-                                <input type="submit" name="submit">
-                            </fieldset>
-                        </form>
-                    </center>
-                </td>
-            </tr>
-        </table>
+        <form action="../controller/control_registration.php" method="POST">
+            <fieldset>
+                <legend>Registration</legend>
+                <table>
+                    <tr>
+                        <!-- Name -->
+                        <td align="left" valign="top">Name: </td>
+                        <td align="left">
+                            <input type="text" name="name" value="<?php echo $name;?>">
+                            <span style="color: white;">*</span><br>
+                            <span style="color: white;"><?php echo $nameErr;?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Email -->
+                        <td align="left" valign="top">Email: </td>
+                        <td align="left" valign="top">
+                            <input type="text" name="email" value="<?php echo $email;?>">
+                            <span style="color: white;">*</span><br>
+                            <span style="color: white;"><?php echo $emailErr;?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- contact -->
+                        <td align="left" valign="top">contact: </td>
+                        <td align="left" valign="top">
+                            <input type="text" name="contact" value="<?php echo $contact;?>">
+                            <span style="color: white;">*</span><br>
+                            <span style="color: white;"><?php echo $contactErr;?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- address -->
+                        <td align="left" valign="top">
+                            Address:
+                        </td>
+                        <td align="left" valign="top">
+                            <textarea name="adress" rows="5" cols="30" ><?php echo $adress;?></textarea>
+                            <span style="color: white;">
+                                *<br>
+                                <?php echo $adressErr;?>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- userid -->
+                        <td align="left" valign="top">Choose User ID: </td>
+                        <td align="left">
+                            <input type="text" name="userid" value="<?php echo $userid;?>">
+                            <span style="color: white;">*</span><br>
+                            <span style="color: white;"><?php echo $useridErr;?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- password -->
+                        <td align="left" valign="top">Password: </td>
+                        <td align="left" valign="top">
+                            <input type="password" name="password" value="<?php echo $password;?>">
+                            <span style="color: white;">*</span><br>
+                            <span style="color: white;"><?php echo $passwordErr;?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- cpassword -->
+                        <td align="left" valign="top">Confirm password: </td>
+                        <td align="left" valign="top">
+                            <input type="password" name="cpassword" value="<?php echo $cpassword;?>">
+                            <span style="color: white;">*</span><br>
+                            <span style="color: white;"><?php echo $cpasswordErr;?></span>
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <input type="submit" name="submit">
+            </fieldset>
+        </form>
     </center>
+    <?php require_once 'footer.php'; ?>
 </body>
 </html>
