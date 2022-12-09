@@ -148,5 +148,61 @@
 			return false;
 		}
     }
+    // Deleting a  passenger ID method
+    function showPassengerList()
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Deleteing data from login table
+        $sql= "select * from users";
+        $result=mysqli_query($con, $sql);
+        // Closing database connection
+        $con->close();
+        if($result)
+        {
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    function deletePassenger($userid)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Deleteing data from login table
+        $usertype="passenger";
+        $sql= "DELETE FROM users WHERE userid='{$userid}' and usertype='{$usertype}'";
+        $result=mysqli_query($con, $sql);
+        // Closing database connection
+        $con->close();
+        if($result)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    function searchPassenger($userid)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Deleteing data from login table
+        $sql= "select * from users where upper(userid) like upper('%{$userid}%')";
+        $result=mysqli_query($con, $sql);
+        // Closing database connection
+        $con->close();
+        if($result)
+        {
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 ?>

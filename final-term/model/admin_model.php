@@ -1,44 +1,7 @@
 <?php
     // The Admin has all access that an employee has
     include 'employee_model.php';
-    // Deleting a  passenger ID method
-    function showPassengerList()
-    {
-        // Connecting to database
-        $con = getconnection();
-        // Deleteing data from login table
-        $sql= "select * from users";
-        $result=mysqli_query($con, $sql);
-        // Closing database connection
-        $con->close();
-		if($result)
-        {
-			return $result;
-		}
-        else
-        {
-			return false;
-		}
-    }
-    function deletePassenger($userid)
-    {
-        // Connecting to database
-        $con = getconnection();
-        // Deleteing data from login table
-        $usertype="passenger";
-        $sql= "DELETE FROM users WHERE userid='{$userid}' and usertype='{$usertype}'";
-        $result=mysqli_query($con, $sql);
-        // Closing database connection
-        $con->close();
-		if($result)
-        {
-			return true;
-		}
-        else
-        {
-			return false;
-		}
-    }
+
     // Deleting a  passenger ID method
     function deleteDriver($userid)
     {

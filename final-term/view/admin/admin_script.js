@@ -29,7 +29,6 @@ function deletePassenger(userid, userimage)
 {
     deletemodal.style.display = "block";
     document.getElementById("deletepara").innerHTML="Do you wand to delete ID: "+userid;
-    document.getElementById("deletepara").innerHTML="../profile_image/"+userid+".jpg";
     document.getElementById('deleteuserimg').setAttribute("src", "../profile_image/"+userimage);
 }
 function blockPassenger()
@@ -42,4 +41,16 @@ function blockPassenger()
     {
         alert("Not blocked");
     }
+}
+function searchpassenger(userid) {
+ 
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("userslist").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("POST","userslist.php?",true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send("userid="+userid);
 }

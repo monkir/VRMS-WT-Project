@@ -109,7 +109,11 @@ table tr{
 table tr:nth-child(even){
     background-color: orangered;
 }
-table td{
+table td, th{
     border: 2px white solid;
     color: white;
+}
+table tr:hover{
+    box-shadow: 50px;
+    background-color: brown;
 }

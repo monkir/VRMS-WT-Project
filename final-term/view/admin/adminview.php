@@ -20,7 +20,6 @@ if($usertype != "admin")
 {
     header("location: ../homepage.php?err=bad_request");
 }
-include_once '../../model/admin_model.php';
 $root="../";
 ?>
 <!DOCTYPE html>
@@ -33,60 +32,14 @@ $root="../";
     <link rel="stylesheet" href="adminstyle.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="searchpassenger('')">
     <?php
     include_once '../header.php'; 
     echo "<h1>".$usertype."</h1>";
     ?>
-    <div style="align-content: center;">
-        <?php 
-        $result= showPassengerList();
-        if($result->num_rows==0)
-        {
-            echo "No Results Founded";
-        }
-        else
-        {
-            ?>
-            <table>
-                <tr>
-                    <th>Userid</th>
-                    <th>Usertype</th>
-                    <th>Status</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Address</th>
-                    <th>Image</th>
-                    <th>Action</th>
-                </tr>
-                <?php
-                while($row = $result->fetch_assoc())
-                {
-                    ?>
-                    <tr>
-                        <td><?php echo $row['userid']; ?></td>
-                        <td><?php echo $row['usertype']; ?></td>
-                        <td><?php echo $row['status']; ?></td>
-                        <td><?php echo $row['name']; ?></td>
-                        <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['contact']; ?></td>
-                        <td style="width: 200px;"><?php echo $row['adress']; ?></td>
-                        <td>
-                            <img src="../profile_image/<?php echo $row['profile_image']; ?>" alt="" height="50px">
-                        </td>
-                        <td>
-                            <button onclick="deletePassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">Delete</a>
-                            <button onclick="blockPassenger()">Block</a>
-                        </td>
-                    </tr>
-                    <?php
-                }
-                ?>
-            </table>
-            <?php
-        }
-        ?>
+    <input type="text" onkeyup="searchpassenger(this.value)">
+    <div style="align-content: center;" id="userslist">
+        
     </div>
     <button id="delete-btn">Button</button>
     <div class="delete-modal" id="delete-modal">
