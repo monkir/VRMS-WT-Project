@@ -34,11 +34,11 @@
         $usertype=$_SESSION['usertype'];
     }
     //Loading Profile
-    if(file_exists("profile_image/{$userid}.png"))
+    if(file_exists("{$addBeforeLOC}profile_image/{$userid}.png"))
     {
         $user_profile_image="profile_image/{$userid}.png";
     }
-    else if(file_exists("profile_image/{$userid}.jpg"))
+    else if(file_exists("{$addBeforeLOC}profile_image/{$userid}.jpg"))
     {
         $user_profile_image="profile_image/{$userid}.jpg";
     }
@@ -61,7 +61,7 @@
         <div class="header-item">
             <a href="<?php echo $addBeforeLOC; ?>homepage.php">Home</a>
         </div>
-        <div class="header-item">
+        <div class="header-item" id="login">
             <?php
                 if($status=="")
                 {
@@ -82,7 +82,7 @@
                 }
             ?>
         </div>
-        <div class="header-item">
+        <div class="header-item" id="registration">
             <?php
                 if($status=="")
                 {

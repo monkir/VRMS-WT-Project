@@ -30,7 +30,7 @@ $root="../";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <script src="admin_script.js"></script>
+    <link rel="stylesheet" href="adminstyle.css">
     <title>Document</title>
 </head>
 <body>
@@ -71,7 +71,7 @@ $root="../";
                         <td><?php echo $row['contact']; ?></td>
                         <td style="width: 200px;"><?php echo $row['adress']; ?></td>
                         <td>
-                            <button onclick="deletePassenger()">Delete</a>
+                            <button onclick="deletePassenger('<?php echo $row['userid']; ?>')">Delete</a>
                             <button onclick="blockPassenger()">Block</a>
                         </td>
                     </tr>
@@ -83,8 +83,22 @@ $root="../";
         }
         ?>
     </div>
+    <button id="delete-btn">Button</button>
+    <div class="delete-modal" id="delete-modal">
+        <center>
+            <div class="delete-modal-content">
+                <p id="deletepara">
+                    Are you sure to delete?
+                </p>
+                <button class="close"> Yes </button>
+                <button> No</button>
+            </div>
+        </center>
+        
+    </div>
     <?php
         require_once '../footer.php';
     ?>
 </body>
 </html>
+<script src="admin_script.js"></script>

@@ -35,36 +35,46 @@
                 $result=getPassengerTripHistory($userid);
                 if ($result) 
                 {
-                    // Fetch one and one row
-                    
-                    ?>
-                    <table border="5px">
-                        <tr>
-                            <th>Trip History ID</th>
-                            <th>Trip ID</th>
-                            <th>Departure</th>
-                            <th>Destination</th>
-                            <th>Trip Date</th>
-                            <th>Price</th>
-                        </tr>
-                        <?php
-                        while ($row = $result->fetch_assoc()) 
-                        {
+                    if($result->num_rows==0)
+                    {
                         ?>
-                        <tr>
-                            <td><?php echo $row['th_id']?></th>
-                            <td><?php echo $row['trip_id']?></th>
-                            <td><?php echo $row['departure']?></th>
-                            <td><?php echo $row['destination']?></th>
-                            <td><?php echo $row['trip_date']?></th>
-                            <td><?php echo $row['price']?></th>
-                        </tr>
+                        <h1>
+                            No result Found
+                        </h1>
                         <?php
-                        }
+                    }
+                    else
+                    {
                         ?>
+                        <table border="5px">
+                            <tr>
+                                <th>Trip History ID</th>
+                                <th>Trip ID</th>
+                                <th>Departure</th>
+                                <th>Destination</th>
+                                <th>Trip Date</th>
+                                <th>Price</th>
+                            </tr>
+                            <?php
+                            while ($row = $result->fetch_assoc()) 
+                            {
+                            ?>
+                            <tr>
+                                <td><?php echo $row['th_id']?></th>
+                                <td><?php echo $row['trip_id']?></th>
+                                <td><?php echo $row['departure']?></th>
+                                <td><?php echo $row['destination']?></th>
+                                <td><?php echo $row['trip_date']?></th>
+                                <td><?php echo $row['price']?></th>
+                            </tr>
+                            <?php
+                            }
+                            ?>
 
-                    </table>
-                    <?php
+                        </table>
+                        <?php
+                    }
+                    
                     mysqli_free_result($result);
                 }
                 else

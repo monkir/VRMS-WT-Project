@@ -95,7 +95,9 @@
 <body>
     <?php
         require_once 'header.php';
-    ?>
+    ?><script>
+    document.getElementById("registration").hidden=true;
+</script>
     <center>
         <h1>Welcome to VRMS</h1>
         <img src="VRMS.png" alt="" width="100px">

@@ -25,14 +25,25 @@
 </head>
 <body>
     <center>
-        <span style="color: red;">
-            <?php echo $errorMessage ?><br>
-        </span>
-        <?php require_once 'header.php'; ?>
-        
-        <?php 
-            require_once '../model/user_model.php'; 
-            $result = getAvailableTrip();
+    <span style="color: red;">
+        <?php echo $errorMessage ?><br>
+    </span>
+    <?php require_once 'header.php'; ?>
+    
+    <?php 
+    require_once '../model/user_model.php'; 
+    $result = getAvailableTrip();
+    //echo "Num_rows: ". $result->num_rows;
+    if($result->num_rows == 0)
+    {
+        ?>
+        <h1>
+            No result Found
+        </h1>
+        <?php
+    }
+    else
+    {
         ?>
         <table border="3px">
             <tr>
@@ -70,7 +81,9 @@
                 }
             ?>
         </table>
-        
+        <?php
+    }
+    ?>
     </center>
     <?php require_once 'footer.php'; ?>
     

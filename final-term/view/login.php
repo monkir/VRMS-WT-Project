@@ -55,12 +55,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="userscript.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
     <?php
         require_once 'header.php';
     ?>
+    <script>
+        document.getElementById("login").hidden=true;
+    </script>
     <center>
         <span style="color: red;"><?php echo $requestMessage;?></span><br>
         <table>
