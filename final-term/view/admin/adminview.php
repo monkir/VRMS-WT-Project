@@ -57,6 +57,8 @@ $root="../";
                     <th>Email</th>
                     <th>Contact</th>
                     <th>Address</th>
+                    <th>Image</th>
+                    <th>Action</th>
                 </tr>
                 <?php
                 while($row = $result->fetch_assoc())
@@ -71,7 +73,10 @@ $root="../";
                         <td><?php echo $row['contact']; ?></td>
                         <td style="width: 200px;"><?php echo $row['adress']; ?></td>
                         <td>
-                            <button onclick="deletePassenger('<?php echo $row['userid']; ?>')">Delete</a>
+                            <img src="../profile_image/<?php echo $row['profile_image']; ?>" alt="" height="50px">
+                        </td>
+                        <td>
+                            <button onclick="deletePassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">Delete</a>
                             <button onclick="blockPassenger()">Block</a>
                         </td>
                     </tr>
@@ -87,6 +92,7 @@ $root="../";
     <div class="delete-modal" id="delete-modal">
         <center>
             <div class="delete-modal-content">
+                <img src="" height="200px" alt="" id="deleteuserimg">
                 <p id="deletepara">
                     Are you sure to delete?
                 </p>

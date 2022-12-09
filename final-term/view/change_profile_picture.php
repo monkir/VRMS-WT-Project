@@ -31,6 +31,9 @@
         <?php
             require_once 'user_header.php';
         ?>
+        <script>
+            document.getElementById("change-profile").style.backgroundColor="orange";
+        </script>
         <img src="<?php echo $user_profile_image;?>" alt="" width="200px"><br>
         <h1>Previous Profile Picture</h1> <br><br>
         <form action="../controller/control_change_image.php" method="post" enctype="multipart/form-data">

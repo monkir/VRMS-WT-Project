@@ -110,5 +110,6 @@ table tr:nth-child(even){
     background-color: orangered;
 }
 table td{
+    border: 2px white solid;
     color: white;
 }

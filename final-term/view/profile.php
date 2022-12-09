@@ -39,6 +39,11 @@
             
             <?php
                 require_once 'user_header.php';
+                ?>
+                <script>
+                    document.getElementById("profile").style.backgroundColor="orange";
+                </script>
+                <?php
                 require_once '../model/user_model.php';
                 $result = getProfileDetails($userid);
                 if ($result) 

@@ -71,6 +71,9 @@ use LDAP\Result;
 <body>
 <center>
     <?php require_once 'user_header.php'; ?>
+    <script>
+        document.getElementById("change-pass").style.backgroundColor="orange";
+    </script>
     <span style="color: red;"><?php echo $error;?></span><br>
     <form action="../controller/control_change_password.php" method="POST">
         <fieldset>

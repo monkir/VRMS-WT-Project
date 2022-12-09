@@ -31,6 +31,11 @@
     <center>
             <?php
                 require_once 'user_header.php';
+                ?>
+                <script>
+                    document.getElementById("trip-history").style.backgroundColor="white";
+                </script>
+                <?php
                 require_once '../model/trip_model.php';
                 $result=getPassengerTripHistory($userid);
                 if ($result) 

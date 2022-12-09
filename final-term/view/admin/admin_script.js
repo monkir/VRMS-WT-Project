@@ -25,10 +25,12 @@ span.onclick = function() {
 //   }
 // }
 
-function deletePassenger(userid)
+function deletePassenger(userid, userimage)
 {
     deletemodal.style.display = "block";
     document.getElementById("deletepara").innerHTML="Do you wand to delete ID: "+userid;
+    document.getElementById("deletepara").innerHTML="../profile_image/"+userid+".jpg";
+    document.getElementById('deleteuserimg').setAttribute("src", "../profile_image/"+userimage);
 }
 function blockPassenger()
 {
