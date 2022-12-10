@@ -91,12 +91,12 @@
                                             <span style="color: red;">*</span><br>
                                             <div id="passwordErr" class="err"><?php echo $passwordErr;?></div><br>
                                         </td>
-                                    </tr>
+                                    </tr> 
                                 </table>
                                 <hr>
                                 <input type="checkbox" name="remember">Remember Me <br>
                                 <input type="submit" name="submit">
-                                <a href="reset_password.php">Forot Password?</a>
+                                <a href="reset_password.php">Forgot Password?</a>
                             </fieldset>
                         </form>
                     </center>

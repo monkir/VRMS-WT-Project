@@ -13,3 +13,5 @@ userid: monkir, password: asdf4561, usertype: passenger, status: active, name: M
 userid: monkir, password: asdf4561, usertype: passenger, status: active, name: Monkir Chowdhury, email: monkirchowdhury@gmail.com, contact: 03521635211, adress: Jasimuddin Road, North Kamalapur, Motijheel, Dhaka
 userid: munna, password: muzahid456, usertype: passenger, status: active, name: Muzahidul Islam, email: muzahid.aiub@gmail.com, contact: 03521632561, adress: Pabna
 userid: rad, password: akash456, usertype: passenger, status: active, name: Rad Shahmat Akash, email: rad@gmail.com, contact: 01475165164, adress: Kishoregonj
+userid: mahin11, password: mahin456, usertype: passenger, status: active, name: Adnan Mahin, email: mahin@mail.com, contact: 01216514651, adress: Kishorgonj
+userid: najabat, password: chowdhury456, usertype: passenger, status: active, name: Najabat Chowdhury Anaf, email: najabat@gmail.com, contact: 06951165146, adress: Narshingdhi

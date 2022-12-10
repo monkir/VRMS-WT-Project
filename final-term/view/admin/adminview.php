@@ -60,7 +60,7 @@ $root="../";
     </div>
     <div class="all-header-container">
         <div class="admin-header-content">
-            <a href="manage_passenger.php" style="border: 2px solid black;">
+            <a href="" style="border: 2px solid black;">
                 <img src="image/car-logo.png" alt="">Manage Cars
             </a>
         </div>
@@ -68,7 +68,7 @@ $root="../";
     <div class="all-header-container">
         <div class="admin-header-content">
             <a href="" style="border: 2px solid black;">
-                <img src="image/driver-icon.png" alt="">Manage Trips 
+                <img src="image/trip-icon.png" alt="">Manage Trips 
             </a>
         </div>
     </div>

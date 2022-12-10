@@ -187,12 +187,18 @@
             return false;
         }
     }
-    function searchPassenger($userid)
+    function searchPassenger($search)
     {
         // Connecting to database
         $con = getconnection();
         // Deleteing data from login table
-        $sql= "select * from users where upper(userid) like upper('%{$userid}%') and  usertype='passenger'";
+        $sql= "select * from users where 
+            (upper(userid) like upper('%{$search}%') 
+            or upper(contact) like upper('%{$search}%')
+            or upper(email) like upper('%{$search}%')
+            or upper(name) like upper('%{$search}%')
+            or upper(adress) like upper('%{$search}%')
+            )and  usertype='passenger'";
         $result=mysqli_query($con, $sql);
         // Closing database connection
         $con->close();

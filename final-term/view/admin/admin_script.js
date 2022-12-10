@@ -103,7 +103,7 @@ function searchpassenger(userid) {
       document.getElementById("userslist").innerHTML=this.responseText;
     }
   }
-  xmlhttp.open("POST","userslist.php?",true);
+  xmlhttp.open("POST","passenger_list.php?",true);
   xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
   xmlhttp.send("userid="+userid);
 }

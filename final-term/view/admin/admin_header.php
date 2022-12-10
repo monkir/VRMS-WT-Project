@@ -27,7 +27,7 @@
                 <img src="image/car-logo.png" alt="">Manage Cars
             </a>
             <a href="" style="border: 2px solid black;">
-                <img src="image/driver-icon.png" alt="">Manage Trips 
+                <img src="image/trip-icon.png" alt="">Manage Trips 
             </a>
         </div>
     </div>
