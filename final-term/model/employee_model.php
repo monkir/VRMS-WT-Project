@@ -211,5 +211,38 @@
             return false;
         }
     }
+    function searchDriver($search)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Deleteing data from login table
+        $sql= "select 
+            us.userid, us.contact, us.email, us.name, us.adress,
+            us.usertype, us.status, us.profile_image,
+            ds.license_no, ds.commission, ds.account
+            from users us, drivers ds where 
+            (upper(us.userid) like upper('%{$search}%') 
+            or upper(us.contact) like upper('%{$search}%')
+            or upper(us.email) like upper('%{$search}%')
+            or upper(us.name) like upper('%{$search}%')
+            or upper(us.adress) like upper('%{$search}%')
+            or upper(ds.license_no) like upper('%{$search}%')
+            or upper(ds.commission) like upper('%{$search}%')
+            or upper(ds.account) like upper('%{$search}%')
+            )and  usertype='driver'
+            and us.userid=ds.userid";
+        echo $sql;
+        $result=mysqli_query($con, $sql);
+        // Closing database connection
+        $con->close();
+        if($result)
+        {
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 ?>

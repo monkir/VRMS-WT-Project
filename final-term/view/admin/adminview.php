@@ -45,7 +45,7 @@ $root="../";
     </div>
     <div class="all-header-container">
         <div class="admin-header-content">
-            <a href="" style="border: 2px solid black;">
+            <a href="manage_driver.php" style="border: 2px solid black;">
                 <img src="image/driver-icon.png" alt="">
                 Manage Driver 
             </a>
