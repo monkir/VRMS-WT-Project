@@ -7,12 +7,12 @@ use LDAP\Result;
     $trip_id="";
     $error="";
     $status=true;
-    if(isset($_COOKIE['status']))
+    if(isset($_COOKIE['userid']))
     {
         $status=true;
     }
     //checking sessoin
-    else if(isset($_SESSION['status']))
+    else if(isset($_SESSION['userid']))
     {
         $status=true;
     }

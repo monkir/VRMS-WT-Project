@@ -9,31 +9,33 @@
         $_SESSION['passwordErr']=$passwordErr;
         header("location: ../view/login.php?err=invalid");
     }
-    function goto_hompage()
+    function goto_hompage($userimage)
     {
         global $userid;
         session_start();
-        $_SESSION['status']=$userid;
         $_SESSION['userid']=$userid;
+        $_SESSION['usertype']='passenger';
+        $_SESSION['userimage']=$userimage;
         if (isset($_POST['remember']))
         {
-            setcookie("status", "active", time()+3600, '/');
             setcookie("userid", $userid, time()+3600, '/');
+            setcookie("usertype", "passenger", time()+3600, '/');
+            setcookie("userimage", $userimage, time()+3600, '/');
         }
         header("location: ../view/homepage.php");
     }
-    function goto_adminview()
+    function goto_adminview($userimage)
     {
         global $userid;
         session_start();
-        $_SESSION['status']=$userid;
-        $_SESSION['usertype']='admin';
         $_SESSION['userid']=$userid;
+        $_SESSION['usertype']='admin';
+        $_SESSION['userimage']=$userimage;
         if (isset($_POST['remember']))
         {
-            setcookie("status", "active", time()+3600, '/');
-            setcookie("usertype", "admin", time()+3600, '/');
             setcookie("userid", $userid, time()+3600, '/');
+            setcookie("usertype", "admin", time()+3600, '/');
+            setcookie("userimage", $userimage, time()+3600, '/');
         }
         header("location: ../view/admin/adminview.php");
     }
@@ -72,18 +74,43 @@
         if($useridErr=="" && $passwordErr=="")
         {
             include "../model/user_model.php";
-            if($usertype = login($userid, $password))
+            if($userdetails = login($userid, $password))
             {
-                if($usertype=='passenger')
+                $userstatus=$userdetails['status'];
+                $usertype=$userdetails['usertype'];
+                $userimage=$userdetails['userimage'];
+                if($userstatus=='active')
                 {
-                    goto_hompage();
+                    if($userdetails['usertype']=='passenger')
+                    {
+                        goto_hompage($userimage);
+                    }
+                    elseif($userdetails['usertype']=='admin')
+                    {
+                        goto_adminview($userimage);
+                    }
                 }
-                elseif($usertype=='admin')
+                else
                 {
-                    echo "You are logged as an admin";
-                    //header('location: ../view/admin/adminview.php');
-                    goto_adminview();
+                    ?>
+                    <script>
+                        if(!alert("Your account is blocked!"))
+                        {
+                            window.location.replace("../view/login.php");
+                        }
+                    </script>
+                    <?php
                 }
+                // if($userdetails=='passenger')
+                // {
+                //     goto_hompage();
+                // }
+                // elseif($userdetails=='admin')
+                // {
+                //     echo "You are logged as an admin";
+                //     //header('location: ../view/admin/adminview.php');
+                //     goto_adminview();
+                // }
             }
             else
             {

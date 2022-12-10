@@ -7,11 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     $userid="";
     session_start();
-    if(isset($_COOKIE['status']))
+    if(isset($_COOKIE['userid']))
     {
         $userid=$_COOKIE['userid'];
     }
-    else if(isset($_SESSION['status']))
+    else if(isset($_SESSION['userid']))
     {
         $userid=$_SESSION['userid'];
     }
@@ -40,12 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     }
 
     // Allow certain file formats
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) 
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") 
     {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        echo "Sorry, only JPG, JPEG& PNG files are allowed.";
         ?>
         <script>
-            if(!alert("Sorry, only JPG, JPEG, PNG & GIF files are allowed."))
+            if(!alert("Sorry, only JPG, JPEG& PNG files are allowed."))
             {
                 window.location.replace("../view/change_profile_picture.php");
             }
@@ -54,15 +54,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     }
     else 
     {
+        
+        $userimage="";
         //deleting previous file
         if(file_exists("profile_image/{$userid}.png"))
         {
             $user_profile_image="profile_image/{$userid}.png";
+            $userimage="{$userid}.png";
             unlink($user_profile_image);
         }
         else if(file_exists("profile_image/{$userid}.jpg"))
         {
             $user_profile_image="profile_image/{$userid}.jpg";
+            $userimage="{$userid}.jpg";
             unlink($user_profile_image);
         }
         $info = pathinfo($_FILES['fileToUpload']['name']);
@@ -74,9 +78,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         if (move_uploaded_file( $_FILES['fileToUpload']['tmp_name'], $target)) 
         {
             //header('location: ../view/profile.php');
+            include_once '../model/user_model.php';
+            echo $userid. " ". $newname;
+            if(!isset($_SESSION)) 
+            { 
+                session_start(); 
+            } 
+            $_SESSION['userimage']=$newname;
+            $_COOKIE['userimage']=$newname;
+
+            if(changeProfileImage($userid, $newname))
             ?>
             <script>
-                if(!alert("Profile Picture is changed."))
+                if(!alert("Profile image is changed"))
                 {
                     window.location.replace("../view/profile.php");
                 }

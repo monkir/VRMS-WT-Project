@@ -2,13 +2,13 @@
     //checking cookie
     //session_start();
     require_once "header.php";
-    if(isset($_COOKIE['status']))
+    if(isset($_COOKIE['userid']))
     {
         //header("location: homepage.php?err=already_loggedin");
         //echo "hi";
     }
     //checking sessoin
-    else if(isset($_SESSION['status']))
+    else if(isset($_SESSION['userid']))
     {
         //echo "hi";
     }
@@ -52,7 +52,7 @@
                     while ($row = $result->fetch_assoc()) 
                     {
                     ?>
-                    <img src="<?php echo $user_profile_image;?>" alt="<?php echo $user_profile_image;?>" width="200px"><br>
+                    <img src="<?php echo 'profile_image/'.$userimage;?>" alt="" width="200px"><br>
                     <table>
                         <tr>
                             <th align="right">User ID:</th>

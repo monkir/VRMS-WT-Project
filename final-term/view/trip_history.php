@@ -3,13 +3,13 @@
     //session_start();
     require_once "header.php";
     $userid=$_SESSION['userid'];
-    if(isset($_COOKIE['status']))
+    if(isset($_COOKIE['userid']))
     {
         //header("location: homepage.php?err=already_loggedin");
         //echo "hi";
     }
     //checking sessoin
-    else if(isset($_SESSION['status']))
+    else if(isset($_SESSION['userid']))
     {
         //echo "hi";
     }

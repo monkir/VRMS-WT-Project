@@ -154,7 +154,7 @@
         // Connecting to database
         $con = getconnection();
         // Deleteing data from login table
-        $sql= "select * from users";
+        $sql= "select * from users where usertype='passenger'";
         $result=mysqli_query($con, $sql);
         // Closing database connection
         $con->close();
@@ -174,6 +174,7 @@
         // Deleteing data from login table
         $usertype="passenger";
         $sql= "DELETE FROM users WHERE userid='{$userid}' and usertype='{$usertype}'";
+        echo $sql;
         $result=mysqli_query($con, $sql);
         // Closing database connection
         $con->close();
@@ -191,7 +192,7 @@
         // Connecting to database
         $con = getconnection();
         // Deleteing data from login table
-        $sql= "select * from users where upper(userid) like upper('%{$userid}%')";
+        $sql= "select * from users where upper(userid) like upper('%{$userid}%') and  usertype='passenger'";
         $result=mysqli_query($con, $sql);
         // Closing database connection
         $con->close();

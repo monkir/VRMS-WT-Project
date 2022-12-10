@@ -32,31 +32,48 @@ $root="../";
     <link rel="stylesheet" href="adminstyle.css">
     <title>Document</title>
 </head>
-<body onload="searchpassenger('')">
+<body>
     <?php
-    include_once '../header.php'; 
-    echo "<h1>".$usertype."</h1>";
+    include_once '../header.php';
     ?>
-    <input type="text" onkeyup="searchpassenger(this.value)">
-    <div style="align-content: center;" id="userslist">
-        
+    <div class="all-header-container">
+        <div class="admin-header-content">
+            <a href="manage_passenger.php" style="border: 2px solid black;">
+                <img src="image/passenger-icon.png" alt="">Manage Passenger
+            </a>
+        </div>
     </div>
-    <button id="delete-btn">Button</button>
-    <div class="delete-modal" id="delete-modal">
-        <center>
-            <div class="delete-modal-content">
-                <img src="" height="200px" alt="" id="deleteuserimg">
-                <p id="deletepara">
-                    Are you sure to delete?
-                </p>
-                <button class="close"> Yes </button>
-                <button> No</button>
-            </div>
-        </center>
-        
+    <div class="all-header-container">
+        <div class="admin-header-content">
+            <a href="" style="border: 2px solid black;">
+                <img src="image/driver-icon.png" alt="">
+                Manage Driver 
+            </a>
+        </div>
     </div>
-    <?php
-        require_once '../footer.php';
+    <div class="all-header-container">
+        <div class="admin-header-content">
+            <a href="" style="border: 2px solid black;">
+                <img src="image/employee-icon.jpg" alt=""> Manage Employee
+            </a>
+        </div>
+    </div>
+    <div class="all-header-container">
+        <div class="admin-header-content">
+            <a href="manage_passenger.php" style="border: 2px solid black;">
+                <img src="image/car-logo.png" alt="">Manage Cars
+            </a>
+        </div>
+    </div>
+    <div class="all-header-container">
+        <div class="admin-header-content">
+            <a href="" style="border: 2px solid black;">
+                <img src="image/driver-icon.png" alt="">Manage Trips 
+            </a>
+        </div>
+    </div>
+    <? 
+    require_once '../footer.php';
     ?>
 </body>
 </html>

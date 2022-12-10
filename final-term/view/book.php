@@ -6,7 +6,7 @@ use LDAP\Result;
     //checking cookie
     $trip_id="";
     $error="";
-    if(isset($_COOKIE['status']))
+    if(isset($_COOKIE['userid']))
     {
         //header("location: homepage.php?err=already_loggedin");
         if(isset($_GET['tripid']))
@@ -19,7 +19,7 @@ use LDAP\Result;
         }
     }
     //checking sessoin
-    else if(isset($_SESSION['status']))
+    else if(isset($_SESSION['userid']))
     {
         if(isset($_GET['tripid']))
         {

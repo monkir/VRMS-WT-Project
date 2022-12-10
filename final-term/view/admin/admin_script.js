@@ -1,21 +1,70 @@
 
 // Get the modal
 var deletemodal = document.getElementById("delete-modal");
+var blockmodal = document.getElementById("block-modal");
+var unblockmodal = document.getElementById("unblock-modal");
 
-// Get the button that opens the modal
-var deletebtn = document.getElementById("delete-btn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-deletebtn.onclick = function() {
-  deletemodal.style.display = "block";
-}
-
+var globalid="";
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+function cancelDelete() {
   deletemodal.style.display = "none";
+}
+function cancelBlock() {
+  blockmodal.style.display = "none";
+}
+function cancelUnblock() {
+  unblockmodal.style.display = "none";
+}
+// Confirm Delete
+function confirmDelete() {
+  deletemodal.style.display = "none";
+  //using ajax
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      //document.getElementById("userslist").innerHTML=this.responseText;
+      var response= this.responseText;
+      //alert("Delete: "+response+" Global id:"+globalid);
+      searchpassenger(document.getElementById("search-box").value)
+    }
+  }
+  xmlhttp.open("POST","../../controller/employee/control_delete_passenger.php?",true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send("userid="+globalid);
+}
+// Confirm Block
+function confirmBlock() {
+  blockmodal.style.display = "none";
+  //using ajax
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      //document.getElementById("userslist").innerHTML=this.responseText;
+      var response= this.responseText;
+      //alert("Delete: "+response+" Global id:"+globalid);
+      searchpassenger(document.getElementById("search-box").value)
+    }
+  }
+  xmlhttp.open("POST","../../controller/employee/control_block_passenger.php?",true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send("userid="+globalid);
+}
+// Confirm unBlock
+function confirmUnblock() {
+  unblockmodal.style.display = "none";
+  //using ajax
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      //document.getElementById("userslist").innerHTML=this.responseText;
+      var response= this.responseText;
+      //alert("Delete: "+response+" Global id:"+globalid);
+      searchpassenger(document.getElementById("search-box").value)
+    }
+  }
+  xmlhttp.open("POST","../../controller/employee/control_unblock_passenger.php?",true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send("userid="+globalid);
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -29,18 +78,22 @@ function deletePassenger(userid, userimage)
 {
     deletemodal.style.display = "block";
     document.getElementById("deletepara").innerHTML="Do you wand to delete ID: "+userid;
-    document.getElementById('deleteuserimg').setAttribute("src", "../profile_image/"+userimage);
+    document.getElementById('delete-userimg').setAttribute("src", "../profile_image/"+userimage);
+    globalid=userid;
 }
-function blockPassenger()
+function blockPassenger(userid, userimage)
 {
-    if(confirm("Sure to block this passenger"))
-    {
-        alert("Successfully blocked");
-    }
-    else
-    {
-        alert("Not blocked");
-    }
+  blockmodal.style.display = "block";
+  document.getElementById("block-para").innerHTML="Do you wand to Block ID: "+userid;
+  document.getElementById('block-userimg').setAttribute("src", "../profile_image/"+userimage);
+  globalid=userid;
+}
+function unblockPassenger(userid, userimage)
+{
+  unblockmodal.style.display = "block";
+  document.getElementById("unblock-para").innerHTML="Do you wand to unblock ID: "+userid;
+  document.getElementById('unblock-userimg').setAttribute("src", "../profile_image/"+userimage);
+  globalid=userid;
 }
 function searchpassenger(userid) {
  
@@ -54,3 +107,4 @@ function searchpassenger(userid) {
   xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
   xmlhttp.send("userid="+userid);
 }
+  

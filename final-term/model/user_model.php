@@ -49,6 +49,26 @@
 			return false;
 		}
     }
+    function changeProfileImage($userid, $userimage)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Inserting data into login table
+        $sql= "UPDATE users SET profile_image = '{$userimage}' WHERE userid='{$userid}'";
+        echo $sql. "<br>";
+        $result=mysqli_query($con, $sql);
+        
+        // Closing database connection
+        $con->close();
+		if($result)
+        {
+			return true;
+		}
+        else
+        {
+			return false;
+		}
+    }
     function forgot_and_reset_password($userid, $email, $contact, $password)
     {
         // Connecting to database
@@ -82,6 +102,8 @@
         {
             $row = $result->fetch_assoc();
             $usertype = $row['usertype'];
+            $userdetails=["usertype"=>$row['usertype'], "status"=>$row['status'], "userimage"=>$row['profile_image'] ];
+            return $userdetails;
             return $usertype;
             return true;
         }else

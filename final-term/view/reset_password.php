@@ -2,12 +2,12 @@
     //checking cookie
     $requestMessage="";
     session_start();
-    if(isset($_COOKIE['status']))
+    if(isset($_COOKIE['userid']))
     {
         header("location: homepage.php?err=already_loggedin");
     }
     //checking sessoin
-    else if(isset($_SESSION['status']))
+    else if(isset($_SESSION['userid']))
     {
         echo "hi";
         header("location: homepage.php?err=already_loggedin");

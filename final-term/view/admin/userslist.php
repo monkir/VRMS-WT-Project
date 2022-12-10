@@ -11,7 +11,7 @@
     $result= searchPassenger($userid);
     if($result->num_rows==0)
     {
-        echo "No Results Founded";
+        echo "<h1>No Results Founded</h1>";
     }
     else
     {
@@ -44,8 +44,30 @@
                         <img src="../profile_image/<?php echo $row['profile_image']; ?>" alt="" height="50px">
                     </td>
                     <td>
-                        <button onclick="deletePassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">Delete</a>
-                        <button onclick="blockPassenger()">Block</a>
+                        <button onclick="deletePassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
+                            Delete
+                        </button>
+                        <?php
+                        if($row['status']=='active')
+                        {
+                        ?>
+                            <button onclick="blockPassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
+                                Block
+                            </button>
+                            <button>Edit</button>
+                        <?php
+                        }
+                        else
+                        {
+                        ?>
+                            <button onclick="unblockPassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
+                                Unblock
+                            </button>
+                            <button>Edit</button>
+                        <?php
+                        }
+                        ?>
+                        
                     </td>
                 </tr>
                 <?php

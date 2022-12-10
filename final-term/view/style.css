@@ -8,6 +8,7 @@ a{
     text-decoration: none;
     padding: 5px;
     margin: 5px;
+    border: 2px solid black;
 }
 a:hover{
     background-color: white;
@@ -17,7 +18,7 @@ a:hover{
     padding: 10px;
     justify-content: space-around;
     background-color:antiquewhite;
-    height: 50px;
+    min-height: 50px;
 }
 .all-header-container div{
     padding: 10px;

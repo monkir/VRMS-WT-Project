@@ -9,7 +9,6 @@
             <img src="<?php echo $addBeforeLOC; ?>image/copyright-logo.jpg" alt="" width="20px">
             Copyright By VRMS Team
         </div>
-        
     </div>
     
 </center>
