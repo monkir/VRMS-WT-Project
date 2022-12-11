@@ -73,7 +73,7 @@ function confirmUnblock() {
 //     modal.style.display = "none";
 //   }
 // }
-
+//delete
 function deletePassenger(userid, userimage)
 {
     deletemodal.style.display = "block";
@@ -81,6 +81,7 @@ function deletePassenger(userid, userimage)
     document.getElementById('delete-userimg').setAttribute("src", "../profile_image/"+userimage);
     globalid=userid;
 }
+//block
 function blockPassenger(userid, userimage)
 {
   blockmodal.style.display = "block";
@@ -88,6 +89,7 @@ function blockPassenger(userid, userimage)
   document.getElementById('block-userimg').setAttribute("src", "../profile_image/"+userimage);
   globalid=userid;
 }
+//unblock
 function unblockPassenger(userid, userimage)
 {
   unblockmodal.style.display = "block";
@@ -95,6 +97,7 @@ function unblockPassenger(userid, userimage)
   document.getElementById('unblock-userimg').setAttribute("src", "../profile_image/"+userimage);
   globalid=userid;
 }
+//Search
 function searchpassenger(userid) {
  
   var xmlhttp=new XMLHttpRequest();

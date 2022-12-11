@@ -231,7 +231,7 @@
             or upper(ds.account) like upper('%{$search}%')
             )and  usertype='driver'
             and us.userid=ds.userid";
-        echo $sql;
+        //echo $sql;
         $result=mysqli_query($con, $sql);
         // Closing database connection
         $con->close();

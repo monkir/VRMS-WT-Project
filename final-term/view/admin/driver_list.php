@@ -50,14 +50,14 @@
                         <img src="../profile_image/<?php echo $row['profile_image']; ?>" alt="" height="50px">
                     </td>
                     <td>
-                        <button onclick="deletePassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
+                        <button onclick="deleteDriver('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
                             Delete
                         </button>
                         <?php
                         if($row['status']=='active')
                         {
                         ?>
-                            <button onclick="blockPassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
+                            <button onclick="blockDriver('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
                                 Block
                             </button>
                             <button>Edit</button>
@@ -66,7 +66,7 @@
                         else
                         {
                         ?>
-                            <button onclick="unblockPassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
+                            <button onclick="unblockDriver('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
                                 Unblock
                             </button>
                             <button>Edit</button>

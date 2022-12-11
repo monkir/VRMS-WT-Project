@@ -86,4 +86,4 @@ $root="../";
     ?>
 </body>
 </html>
-<script src="admin_script.js"></script>
+<script src="mng_passenger_script.js"></script>
