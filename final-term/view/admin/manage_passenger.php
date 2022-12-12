@@ -38,6 +38,7 @@ $root="../";
     include_once 'admin_header.php'; 
     echo "<h1>".$usertype."</h1>";
     ?>
+    <div id="message"></div>
     <input type="text" onkeyup="searchpassenger(this.value)" id="search-box">
     <div style="align-content: center;" id="userslist">
         <!-- User list will be append here -->
@@ -53,8 +54,9 @@ $root="../";
                 <button onclick="confirmDelete()"> Confirm </button>
                 <button onclick="cancelDelete()"> No</button>
             </div>
-    </center>
+        </center>
     </div>
+    <!-- Ended Modal for Delete -->
     <!-- Modal for Block -->
     <div class="modal" id="block-modal">
         <center>
@@ -66,8 +68,9 @@ $root="../";
                 <button onclick="confirmBlock()"> Confirm </button>
                 <button onclick="cancelBlock()"> No</button>
             </div>
-    </center>
+        </center>
     </div>
+    <!-- Ended Modal for Block -->
     <!-- Modal for UnBlock -->
     <div class="modal" id="unblock-modal">
         <center>
@@ -79,8 +82,28 @@ $root="../";
                 <button onclick="confirmUnblock()"> Confirm </button>
                 <button  onclick="cancelUnblock()"> No</button>
             </div>
-    </center>
+        </center>
     </div>
+    <!-- Ended Modal for Unblock -->
+    <!-- Modal for Edit -->
+    <div class="modal" id="edit-modal">
+        <center>
+            <div class="modal-content">
+                <img src="" height="200px" alt="" id="edit-userimg">
+                <div id="edit-para">
+                    Are you sure to Edit?
+                    ID: <p id="edit-pid"></p>
+                    Name: <input type="text" id="edit-pname" value=""><br>
+                    Contact: <input type="text" id="edit-pcontact" value=""><br>
+                    Email: <input type="text" id="edit-pemail" value=""><br>
+                    Address: <input type="text" id="edit-paddress" value=""><br>
+                </div>
+                <button onclick="confirmEdit()"> Confirm </button>
+                <button  onclick="cancelEdit()"> No</button>
+            </div>
+        </center>
+    </div>
+    <!-- Ended Modal for Edit -->
     <?php
         require_once '../footer.php';
     ?>

@@ -23,9 +23,9 @@ function confirmDelete() {
   xmlhttp.onreadystatechange=function() {
     if (this.readyState==4 && this.status==200) {
       //document.getElementById("userslist").innerHTML=this.responseText;
-      var response= this.responseText;
+      //var response= this.responseText;
       //alert("Delete: "+response+" Global id:"+globalid);
-      searchDriver(document.getElementById("search-box").value)
+      searchDriver(document.getElementById("search-box").value);
     }
   }
   xmlhttp.open("POST","../../controller/employee/control_delete_Driver.php?",true);
@@ -40,9 +40,10 @@ function confirmBlock() {
   xmlhttp.onreadystatechange=function() {
     if (this.readyState==4 && this.status==200) {
       //document.getElementById("userslist").innerHTML=this.responseText;
-      var response= this.responseText;
+      //document.getElementById("message").innerHTML=this.response;
+      //var response= this.responseText;
       //alert("Delete: "+response+" Global id:"+globalid);
-      searchDriver(document.getElementById("search-box").value)
+      searchDriver(document.getElementById("search-box").value);
     }
   }
   xmlhttp.open("POST","../../controller/employee/control_block_Driver.php?",true);
@@ -57,9 +58,10 @@ function confirmUnblock() {
   xmlhttp.onreadystatechange=function() {
     if (this.readyState==4 && this.status==200) {
       //document.getElementById("userslist").innerHTML=this.responseText;
-      var response= this.responseText;
+      //document.getElementById("message").innerHTML=this.response;
+      //var response= this.responseText;
       //alert("Delete: "+response+" Global id:"+globalid);
-      searchDriver(document.getElementById("search-box").value)
+      searchDriver(document.getElementById("search-box").value);
     }
   }
   xmlhttp.open("POST","../../controller/employee/control_unblock_Driver.php?",true);
@@ -97,20 +99,20 @@ function unblockDriver(userid, userimage)
   document.getElementById('unblock-userimg').setAttribute("src", "../profile_image/"+userimage);
   globalid=userid;
 }
-//Search
-function searchDriver(userid) {
+// //Search
+// function searchDriver(userid) {
  
-  var xmlhttp=new XMLHttpRequest();
-  xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
-      document.getElementById("driver-list").innerHTML=this.responseText;
-    }
-  }
-  xmlhttp.open("POST","Driver_list.php?",true);
-  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-  xmlhttp.send("userid="+userid);
-}
-function search_driver(userid) {
+//   var xmlhttp=new XMLHttpRequest();
+//   xmlhttp.onreadystatechange=function() {
+//     if (this.readyState==4 && this.status==200) {
+//       document.getElementById("driver-list").innerHTML=this.responseText;
+//     }
+//   }
+//   xmlhttp.open("POST","Driver_list.php?",true);
+//   xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+//   xmlhttp.send("userid="+userid);
+// }
+function searchDriver(userid) {
  
   var xmlhttp=new XMLHttpRequest();
   xmlhttp.onreadystatechange=function() {

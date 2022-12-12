@@ -32,13 +32,14 @@ $root="../";
     <link rel="stylesheet" href="adminstyle.css">
     <title>Document</title>
 </head>
-<body onload="search_driver('')">
+<body onload="searchDriver('')">
     <?php
     include_once '../header.php'; 
     include_once 'admin_header.php'; 
     echo "<h1>".$usertype."</h1>";
     ?>
-    <input type="text" onkeyup="search_driver(this.value)" id="search-box">
+    <p id="message"></p>
+    <input type="text" onkeyup="searchDriver(this.value)" id="search-box">
     <div style="align-content: center;" id="driver-list">
         <!-- User list will be append here -->
     </div>

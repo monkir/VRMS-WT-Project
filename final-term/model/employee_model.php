@@ -99,6 +99,7 @@
         // Inserting data into login table
         $usertype="driver";
         $sql= "UPDATE users SET status='active' WHERE userid='{$userid}' and usertype='{$usertype}'";
+        echo $sql;
         $result=mysqli_query($con, $sql);
         // Closing database connection
         $con->close();
@@ -174,6 +175,26 @@
         // Deleteing data from login table
         $usertype="passenger";
         $sql= "DELETE FROM users WHERE userid='{$userid}' and usertype='{$usertype}'";
+        echo $sql;
+        $result=mysqli_query($con, $sql);
+        // Closing database connection
+        $con->close();
+        if($result)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    function editPassenger($userid, $name, $email, $contact, $address)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Deleteing data from login table
+        $usertype="passenger";
+        $sql= "UPDATE users SET name='{$name}', email='{$email}', contact='{$contact}', adress='{$address}' WHERE userid='{$userid}' and usertype='{$usertype}'";
         echo $sql;
         $result=mysqli_query($con, $sql);
         // Closing database connection
