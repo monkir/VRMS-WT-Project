@@ -6,13 +6,13 @@
         global $nameErr,$emailErr,$contactErr,$adressErr,$useridErr,$passwordErr,$cpasswordErr;
         session_start();
         // For values
-        $_SESSION['name']=$name;
-        $_SESSION['email']=$email;
-        $_SESSION['contact']=$contact;
-        $_SESSION['adress']=$adress;
-        $_SESSION['userid']=$userid;
-        $_SESSION['password']=$password;
-        $_SESSION['cpassword']=$cpassword;
+        $_SESSION['rname']=$name;
+        $_SESSION['remail']=$email;
+        $_SESSION['rcontact']=$contact;
+        $_SESSION['radress']=$adress;
+        $_SESSION['ruserid']=$userid;
+        $_SESSION['rpassword']=$password;
+        $_SESSION['rcpassword']=$cpassword;
         // For Error
         $_SESSION['nameErr']=$nameErr;
         $_SESSION['emailErr']=$emailErr;

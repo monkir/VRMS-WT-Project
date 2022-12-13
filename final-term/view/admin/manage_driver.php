@@ -40,6 +40,7 @@ $root="../";
     ?>
     <p id="message"></p>
     <input type="text" onkeyup="searchDriver(this.value)" id="search-box">
+    <button onclick="addDriver()">Add Driver</button>
     <div style="align-content: center;" id="driver-list">
         <!-- User list will be append here -->
     </div>
@@ -82,6 +83,37 @@ $root="../";
             </div>
     </center>
     </div>
+    <!-- Modal for UnBlock -->
+    <!-- Modal for Add New Driver -->
+    <div class="modal" id="addDriver-modal">
+        <center>
+            <div class="modal-content">
+                <form action="" onsubmit="return validateAddDriver()">
+                    <legend>
+                        <legend>
+                            Name<input type="text" name="dname" id="dname"><br>
+                            <input type="text" name="demail" id="demail" value=""><br>
+                            <input type="text" name="dcontact" id="dcontact" value=""><br>
+                            <input type="text" name="address" id="daddress" value=""><br>
+                        </legend>
+                        <legend>
+                            <input type="text" name="did" id="did" value=""><br>
+                        </legend>
+                        <legend>
+                            Enter passwrod: <input type="password" name="dpassword" id="dpassword" value=""><br>
+                            Confirm Password: <input type="password" name="cdpassword" id="cdpassword" value=""><br>
+                            
+                        </legend>
+                        <button type="submit">Submit</button>
+                    </legend>
+                </form>
+                <button onclick="confirmAddDriver()"> Confirm </button>
+                <button  onclick="cancelAddDriver()"> No</button>
+            </div>
+    </center>
+    </div>
+        <!-- Modal for UnBlock -->
+
     <?php
         require_once '../footer.php';
     ?>

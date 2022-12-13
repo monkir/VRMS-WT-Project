@@ -3,6 +3,7 @@
 var deletemodal = document.getElementById("delete-modal");
 var blockmodal = document.getElementById("block-modal");
 var unblockmodal = document.getElementById("unblock-modal");
+var addDrivermodal = document.getElementById("addDriver-modal");
 
 var globalid="";
 // When the user clicks on <span> (x), close the modal
@@ -14,6 +15,26 @@ function cancelBlock() {
 }
 function cancelUnblock() {
   unblockmodal.style.display = "none";
+}
+function cancelAddDriver() {
+  addDrivermodal.style.display = "none";
+}
+// Confirm Add Driver
+function confirmAddDriver() {
+  addDrivermodal.style.display = "none";
+  //using ajax
+  // var xmlhttp=new XMLHttpRequest();
+  // xmlhttp.onreadystatechange=function() {
+  //   if (this.readyState==4 && this.status==200) {
+  //     //document.getElementById("userslist").innerHTML=this.responseText;
+  //     //var response= this.responseText;
+  //     //alert("Delete: "+response+" Global id:"+globalid);
+  //     searchDriver(document.getElementById("search-box").value);
+  //   }
+  // }
+  // xmlhttp.open("POST","../../controller/employee/control_delete_Driver.php?",true);
+  // xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  // xmlhttp.send("userid="+globalid);
 }
 // Confirm Delete
 function confirmDelete() {
@@ -75,7 +96,18 @@ function confirmUnblock() {
 //     modal.style.display = "none";
 //   }
 // }
-//delete
+//Add
+function validateAddDriver()
+{
+  return false;
+}
+function addDriver()
+{
+    addDrivermodal.style.display = "block";
+    // document.getElementById("deletepara").innerHTML="Do you wand to delete ID: "+userid;
+    // document.getElementById('delete-userimg').setAttribute("src", "../profile_image/"+userimage);
+    //globalid=userid;
+}
 function deleteDriver(userid, userimage)
 {
     deletemodal.style.display = "block";

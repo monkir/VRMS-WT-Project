@@ -36,13 +36,17 @@ $root="../";
     <?php
     include_once '../header.php'; 
     include_once 'admin_header.php'; 
-    echo "<h1>".$usertype."</h1>";
+    // echo "<h1>".$usertype."</h1>";
     ?>
-    <div id="message"></div>
-    <input type="text" onkeyup="searchpassenger(this.value)" id="search-box">
-    <div style="align-content: center;" id="userslist">
-        <!-- User list will be append here -->
-    </div>
+    <center>
+        <br>
+        <div id="message"></div>
+        Search: <input type="search" onkeyup="searchpassenger(this.value)" id="search-box">
+        <div id="userslist">
+            <!-- User list will be append here -->
+        </div>
+    </center>
+    
     <!-- Modal for Delete -->
     <div class="modal" id="delete-modal">
         <center>
@@ -57,7 +61,7 @@ $root="../";
         </center>
     </div>
     <!-- Ended Modal for Delete -->
-    <!-- Modal for Block -->
+    <!-- Starting Modal for Block -->
     <div class="modal" id="block-modal">
         <center>
             <div class="modal-content">
@@ -71,6 +75,18 @@ $root="../";
         </center>
     </div>
     <!-- Ended Modal for Block -->
+    <!--  -->
+    <!-- Starting Modal for Block -->
+    <div class="modal" id="showimage-modal">
+        <center>
+            <div class="modal-content">
+                <img src="" height="500px" alt="" id="show-userimg">
+                <button onclick="closeShowimage()"> Close </button>
+            </div>
+        </center>
+    </div>
+    <!-- Ended Modal for Block -->
+    <!--  -->
     <!-- Modal for UnBlock -->
     <div class="modal" id="unblock-modal">
         <center>
@@ -96,7 +112,7 @@ $root="../";
                     Name: <input type="text" id="edit-pname" value=""><br>
                     Contact: <input type="text" id="edit-pcontact" value=""><br>
                     Email: <input type="text" id="edit-pemail" value=""><br>
-                    Address: <input type="text" id="edit-paddress" value=""><br>
+                    Address: <br> <textarea name="" id="edit-paddress" cols="30" rows="10"></textarea><br>
                 </div>
                 <button onclick="confirmEdit()"> Confirm </button>
                 <button  onclick="cancelEdit()"> No</button>

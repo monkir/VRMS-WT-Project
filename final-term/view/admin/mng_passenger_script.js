@@ -4,6 +4,7 @@ var deletemodal = document.getElementById("delete-modal");
 var editmodal = document.getElementById("edit-modal");
 var blockmodal = document.getElementById("block-modal");
 var unblockmodal = document.getElementById("unblock-modal");
+var showimagemodal = document.getElementById("showimage-modal");
 
 var globalid="";
 // When the user clicks on <span> (x), close the modal
@@ -21,6 +22,10 @@ function cancelBlock() {
 }
 function cancelUnblock() {
   unblockmodal.style.display = "none";
+  globalid="";
+}
+function closeShowimage() {
+  showimagemodal.style.display = "none";
   globalid="";
 }
 // Confirm Delete
@@ -112,7 +117,8 @@ function editPassenger(pid, pname, pemail, pcontact, paddress, pimage)
     document.getElementById('edit-pname').setAttribute("value", pname);
     document.getElementById('edit-pemail').setAttribute("value", pemail);
     document.getElementById('edit-pcontact').setAttribute("value", pcontact);
-    document.getElementById('edit-paddress').setAttribute("value", paddress);
+    // document.getElementById('edit-paddress').setAttribute("value", paddress);
+    document.getElementById('edit-paddress').innerHTML=paddress;
     document.getElementById('edit-userimg').setAttribute("src", "../profile_image/"+pimage);
 }
 //delete
@@ -122,6 +128,12 @@ function deletePassenger(userid, userimage)
     document.getElementById("deletepara").innerHTML="Do you wand to delete ID: "+userid;
     document.getElementById('delete-userimg').setAttribute("src", "../profile_image/"+userimage);
     globalid=userid;
+}
+//Show Image
+function showImage(userimage)
+{
+    showimagemodal.style.display = "block";
+    document.getElementById('show-userimg').setAttribute("src", "../profile_image/"+userimage);
 }
 //block
 function blockPassenger(userid, userimage)

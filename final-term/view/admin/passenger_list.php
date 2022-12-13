@@ -19,13 +19,13 @@
         <table>
             <tr>
                 <th>Userid</th>
-                <th>Usertype</th>
-                <th>Status</th>
+                <!-- <th>Usertype</th> -->
                 <th>Name</th>
                 <th>Email</th>
                 <th>Contact</th>
                 <th>Address</th>
                 <th>Image</th>
+                <th>Status</th>
                 <th>Action</th>
             </tr>
             <?php
@@ -34,19 +34,17 @@
                 ?>
                 <tr>
                     <td><?php echo $row['userid']; ?></td>
-                    <td><?php echo $row['usertype']; ?></td>
-                    <td><?php echo $row['status']; ?></td>
+                    <!-- <td><?php //echo $row['usertype']; ?></td> -->
                     <td><?php echo $row['name']; ?></td>
                     <td><?php echo $row['email']; ?></td>
                     <td><?php echo $row['contact']; ?></td>
                     <td style="width: 200px;"><?php echo $row['adress']; ?></td>
                     <td>
-                        <img src="../profile_image/<?php echo $row['profile_image']; ?>" alt="" height="50px">
+                        <img src="../profile_image/<?php echo $row['profile_image']; ?>" alt="" height="50px" onclick="showImage('<?php echo $row['profile_image']; ?>')">
                     </td>
+                    <!-- Status -->
                     <td>
-                        <button onclick="deletePassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
-                            Delete
-                        </button>
+                        <?php echo $row['status']; ?><br>
                         <?php
                         if($row['status']=='active')
                         {
@@ -66,14 +64,19 @@
                         <?php
                         }
                         ?>
+                    </td>
+                    <td>
+                        <button onclick="deletePassenger('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
+                            Delete
+                        </button>
+                        <br>
                         <button onclick="editPassenger('<?php echo $row['userid']; ?>',
                                                          '<?php echo $row['name']; ?>',
                                                          '<?php echo $row['email']; ?>',
                                                          '<?php echo $row['contact']; ?>',
                                                          '<?php echo $row['adress']; ?>',
                                                          '<?php echo $row['profile_image']; ?>'
-                                                         )">
-                                Edit
+                                                         )">Edit
                         </button>
                         
                     </td>
