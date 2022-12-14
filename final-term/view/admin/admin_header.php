@@ -35,7 +35,7 @@
                 </a>
             </div>
             <div>
-                <a href="" style="border: 2px solid black;">
+                <a href="manage_trip.php" style="border: 2px solid black;">
                     <img src="image/trip-icon.png" alt="">Manage Trips 
                 </a>
             </div>

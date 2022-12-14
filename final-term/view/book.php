@@ -91,8 +91,9 @@ use LDAP\Result;
                   <form action="../controller/control_payment.php" method="post">
                     <?php $_SESSION['trip_id']=$trip_id;?>
                     Select Date: <input type="date" name="trip_date"><br>
-                    <span style="color: red;"><?php echo $error;?></span><br>
-                    <input type="submit" value="Proceed to Payment">
+                    <span style="color: red;"><?php echo $error;?></span><br><br>
+                    <input type="submit" value="Confirm">
+                    <a href="homepage.php">Cancel</a>
                   </form>
                   <?php
                 }

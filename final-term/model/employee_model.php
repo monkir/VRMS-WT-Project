@@ -232,6 +232,38 @@
             return false;
         }
     }
+    function searchTrip($search)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Deleteing data from login table
+        $sql= "select th.th_id, th.trip_id, tp.departure, 
+                tp.destination, th.trip_date, th.price, 
+                th.driver_id, th.passenger_id, th.status 
+                from trips_histories th, trips tp 
+                where tp.trip_id = th.trip_id and(
+                upper(th.th_id) like upper('%{$search}%')
+                or upper(th.trip_id) like upper('%{$search}%')
+                or upper(tp.departure) like upper('%{$search}%')
+                or upper(tp.destination) like upper('%{$search}%')
+                or upper(th.trip_date) like upper('%{$search}%')
+                or upper(th.passenger_id) like upper('%{$search}%')
+                or upper(th.driver_id) like upper('%{$search}%')
+                or upper(th.status) like upper('%{$search}%')
+                )";
+        //echo $sql;
+        $result=mysqli_query($con, $sql);
+        // Closing database connection
+        $con->close();
+        if($result)
+        {
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
     function searchDriver($search)
     {
         // Connecting to database
@@ -259,6 +291,52 @@
         if($result)
         {
             return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    function driverExists($driverid)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Deleteing data from login table
+        $sql= "select * from users where  usertype='driver' and userid='{$driverid}'";
+        //echo $sql;
+        $result=mysqli_query($con, $sql);
+        // Closing database connection
+        $con->close();
+        if($result)
+        {
+            if($result->num_rows==1)
+            {
+                return true;
+            }
+            else
+            {
+                false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+    function change_trip_driver($driverid, $trip_id)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Deleteing data from login table
+        $sql= "UPDATE trips_histories SET driver_id = '{$driverid}' WHERE th_id='{$trip_id}'";
+        //echo $sql;
+        //echo $sql;
+        $result=mysqli_query($con, $sql);
+        // Closing database connection
+        $con->close();
+        if($result)
+        {
+            true;
         }
         else
         {

@@ -12,7 +12,7 @@
         header("location: homepage.php?err=already_loggedin");
     }
     //declaring variables for all input data
-    $name=$email=$contact=$adress=$userid=$password=$cpassword="";
+    $rname=$remail=$rcontact=$radress=$ruserid=$rpassword=$rcpassword="";
     //declaring variables for all input error
     $nameErr=$emailErr=$contactErr=$adressErr=$useridErr=$passwordErr=$cpasswordErr="";
     //checking if request method is post
@@ -22,33 +22,33 @@
         {
             //session_start();
             //input values
-            if(isset($_SESSION['name']))
+            if(isset($_SESSION['rname']))
             {
-                $name=$_SESSION['name'];
+                $rname=$_SESSION['rname'];
             }
-            if(isset($_SESSION['email']))
+            if(isset($_SESSION['remail']))
             {
-                $email=$_SESSION['email'];
+                $remail=$_SESSION['remail'];
             }
-            if(isset($_SESSION['contact']))
+            if(isset($_SESSION['rcontact']))
             {
-                $contact=$_SESSION['contact'];
+                $rcontact=$_SESSION['rcontact'];
             }
-            if(isset($_SESSION['adress']))
+            if(isset($_SESSION['radress']))
             {
-                $adress=$_SESSION['adress'];
+                $radress=$_SESSION['radress'];
             }
-            if(isset($_SESSION['userid']))
+            if(isset($_SESSION['ruserid']))
             {
-                $userid=$_SESSION['userid'];
+                $ruserid=$_SESSION['ruserid'];
             }
-            if(isset($_SESSION['password']))
+            if(isset($_SESSION['rpassword']))
             {
-                $password=$_SESSION['password'];
+                $rpassword=$_SESSION['rpassword'];
             }
-            if(isset($_SESSION['cpassword']))
+            if(isset($_SESSION['rcpassword']))
             {
-                $cpassword=$_SESSION['cpassword'];
+                $rcpassword=$_SESSION['rcpassword'];
             }
             //Error values
             if(isset($_SESSION['nameErr']))
@@ -90,7 +90,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="userscript.js"></script>
-    <title>Document</title>
+    <title>VRMS Registration</title>
 </head>
 <body>
     <?php
@@ -109,7 +109,7 @@
                         <!-- Name -->
                         <td align="left" valign="top">Name: </td>
                         <td align="left">
-                            <input type="text" id="name" name="name" value="<?php echo $name;?>">
+                            <input type="text" id="name" name="name" value="<?php echo $rname;?>">
                             <span style="color: white;">*</span><br>
                             <span id="nameErr" style="color: white;"><?php echo $nameErr;?></span>
                         </td>
@@ -118,7 +118,7 @@
                         <!-- Email -->
                         <td align="left" valign="top">Email: </td>
                         <td align="left" valign="top">
-                            <input type="text" id="email" name="email" value="<?php echo $email;?>">
+                            <input type="text" id="email" name="email" value="<?php echo $remail;?>">
                             <span style="color: white;">*</span><br>
                             <span  id="emailErr" style="color: white;"><?php echo $emailErr;?></span>
                         </td>
@@ -127,7 +127,7 @@
                         <!-- contact -->
                         <td align="left" valign="top">contact: </td>
                         <td align="left" valign="top">
-                            <input id="contact" type="text" name="contact" value="<?php echo $contact;?>">
+                            <input id="contact" type="text" name="contact" value="<?php echo $rcontact;?>">
                             <span style="color: white;">*</span><br>
                             <span id="contactErr" style="color: white;"><?php echo $contactErr;?></span>
                         </td>
@@ -138,7 +138,7 @@
                             Address:
                         </td>
                         <td align="left" valign="top">
-                            <textarea id="address" name="adress" rows="5" cols="30" ><?php echo $adress;?></textarea>
+                            <textarea id="address" name="adress" rows="5" cols="30" ><?php echo $radress;?></textarea>
                             <span style="color: white;">
                                 *<br>
                                 
@@ -152,7 +152,7 @@
                         <!-- userid -->
                         <td align="left" valign="top">Choose User ID: </td>
                         <td align="left">
-                            <input type="text" id="userid" name="userid" value="<?php echo $userid;?>">
+                            <input type="text" id="userid" name="userid" value="<?php echo $ruserid;?>">
                             <span style="color: white;">*</span><br>
                             <span id="useridErr" style="color: white;"><?php echo $useridErr;?></span>
                         </td>
@@ -161,7 +161,7 @@
                         <!-- password -->
                         <td align="left" valign="top">Password: </td>
                         <td align="left" valign="top">
-                            <input id="password" type="password" name="password" value="<?php echo $password;?>">
+                            <input id="password" type="password" name="password" value="<?php echo $rpassword;?>">
                             <span style="color: white;">*</span><br>
                             <span id="passwordErr" style="color: white;"><?php echo $passwordErr;?></span>
                         </td>
@@ -170,7 +170,7 @@
                         <!-- cpassword -->
                         <td align="left" valign="top">Confirm password: </td>
                         <td align="left" valign="top">
-                            <input id="cpassword" type="password" name="cpassword" value="<?php echo $cpassword;?>">
+                            <input id="cpassword" type="password" name="cpassword" value="<?php echo $rcpassword;?>">
                             <span style="color: white;">*</span><br>
                             <span id="cpasswordErr" style="color: white;"><?php echo $cpasswordErr;?></span>
                         </td>

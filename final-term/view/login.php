@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="userscript.js"></script>
     
-    <title>Document</title>
+    <title>VRMS Login</title>
 </head>
 <body>
     <?php
