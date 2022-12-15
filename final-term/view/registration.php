@@ -100,6 +100,7 @@
 </script>
     <center>
         <h1>Welcome to VRMS</h1>
+        <h2>
         <img src="VRMS.png" alt="" width="100px">
         <form action="../controller/control_registration.php" onsubmit="return validateRegistrationForm()" method="POST">
             <fieldset>
@@ -181,6 +182,7 @@
             </fieldset>
         </form>
     </center>
+    </h2>
     <?php require_once 'footer.php'; ?>
 </body>
 </html>

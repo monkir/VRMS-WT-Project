@@ -47,7 +47,7 @@
         $con = getconnection();
         // Inserting data into user table
         $usertype="driver";
-        $status="inactive";
+        $status="active";
         $password = $userid . '123';
         $sql= "INSERT INTO users (userid, password,  usertype, status, name, email, contact, adress) 
             VALUES ('{$userid}', '{$password}', '{$usertype}', '{$status}', '{$name}', '{$email}', '{$contact}', '{$adress}')";
@@ -200,6 +200,28 @@
         // Closing database connection
         $con->close();
         if($result)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    function editDriver($userid, $name, $email, $contact, $address, $license_no, $commission, $account)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Deleteing data from login table
+        $usertype="driver";
+        $sql= "UPDATE users SET name='{$name}', email='{$email}', contact='{$contact}', adress='{$address}' WHERE userid='{$userid}' and usertype='{$usertype}'";
+        //echo $sql;
+        $result1=mysqli_query($con, $sql);
+        $sql = "UPDATE drivers SET license_no='{$license_no}', commission='{$commission}', account='{$account}'  WHERE userid='{$userid}'";
+        // Closing database connection
+        $result2=mysqli_query($con, $sql);
+        $con->close();
+        if($result1 && $result2)
         {
             return true;
         }

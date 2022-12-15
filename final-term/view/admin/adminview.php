@@ -51,7 +51,7 @@ $root="../";
             </a>
         </div>
     </div>
-    <div class="all-header-container">
+    <!-- <div class="all-header-container">
         <div class="admin-header-content">
             <a href="" style="border: 2px solid black;">
                 <img src="image/employee-icon.jpg" alt=""> Manage Employee
@@ -64,7 +64,7 @@ $root="../";
                 <img src="image/car-logo.png" alt="">Manage Cars
             </a>
         </div>
-    </div>
+    </div> -->
     <div class="all-header-container">
         <div class="admin-header-content">
             <a href="" style="border: 2px solid black;">

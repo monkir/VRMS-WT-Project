@@ -24,7 +24,7 @@
                     Manage Driver 
                 </a>
             </div>
-            <div>
+            <!-- <div>
                 <a href="" style="border: 2px solid black;">
                     <img src="image/employee-icon.jpg" alt=""> Manage Employee
                 </a>
@@ -33,7 +33,7 @@
                 <a href="" style="border: 2px solid black;">
                     <img src="image/car-logo.png" alt="">Manage Cars
                 </a>
-            </div>
+            </div> -->
             <div>
                 <a href="manage_trip.php" style="border: 2px solid black;">
                     <img src="image/trip-icon.png" alt="">Manage Trips 

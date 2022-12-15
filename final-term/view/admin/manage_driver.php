@@ -33,17 +33,20 @@ $root="../";
     <title>Document</title>
 </head>
 <body onload="searchDriver('')">
-    <?php
-    include_once '../header.php'; 
-    include_once 'admin_header.php'; 
-    echo "<h1>".$usertype."</h1>";
-    ?>
-    <p id="message"></p>
-    <input type="text" onkeyup="searchDriver(this.value)" id="search-box">
-    <button onclick="addDriver()">Add Driver</button>
-    <div style="align-content: center;" id="driver-list">
-        <!-- User list will be append here -->
-    </div>
+    <center>
+        <?php
+        include_once '../header.php'; 
+        include_once 'admin_header.php'; 
+        echo "<h1>".$usertype."</h1>";
+        ?>
+        <p id="message"></p>
+        <input type="text" onkeyup="searchDriver(this.value)" id="search-box">
+        <!-- <button onclick="addDriver()">Add Driver</button> -->
+        <div style="align-content: center;" id="driver-list">
+            <!-- User list will be append here -->
+        </div>
+    </center>
+    
     <!-- Modal for Delete -->
     <div class="modal" id="delete-modal">
         <center>
@@ -91,28 +94,52 @@ $root="../";
                 <form action="" onsubmit="return validateAddDriver()">
                     <legend>
                         <legend>
-                            Name<input type="text" name="dname" id="dname"><br>
-                            <input type="text" name="demail" id="demail" value=""><br>
-                            <input type="text" name="dcontact" id="dcontact" value=""><br>
-                            <input type="text" name="address" id="daddress" value=""><br>
+                            Adding Driver Account <br>
+                            Name: <input type="text" name="dname" id="dname"><br>
+                            Email: <input type="text" name="demail" id="demail" value=""><br>
+                            Contact: <input type="text" name="dcontact" id="dcontact" value=""><br>
+                            Address: <br>
+                            <textarea name="address"  id="daddress" cols="30" rows="10"></textarea><br>
+                            License No: <input type="text" name="license" id="dlicense" value=""><br>
+                            Commission: <input type="text" name="commission" id="dcommission" value=""><br>
                         </legend>
+                        <br>
                         <legend>
-                            <input type="text" name="did" id="did" value=""><br>
+                            Choose ID<input type="text" name="did" id="did" value=""><br>
                         </legend>
-                        <legend>
-                            Enter passwrod: <input type="password" name="dpassword" id="dpassword" value=""><br>
-                            Confirm Password: <input type="password" name="cdpassword" id="cdpassword" value=""><br>
-                            
-                        </legend>
-                        <button type="submit">Submit</button>
+                        <br>
                     </legend>
+                    <input type="submit" value="Submit">
                 </form>
+                <p id="add-driver-error-message"></p>
                 <button onclick="confirmAddDriver()"> Confirm </button>
                 <button  onclick="cancelAddDriver()"> No</button>
             </div>
     </center>
     </div>
         <!-- Modal for UnBlock -->
+        <!-- Modal for Edit -->
+    <div class="modal" id="edit-modal">
+        <center>
+            <div class="modal-content">
+                <img src="" height="200px" alt="" id="edit-userimg">
+                <div id="edit-para">
+                    Are you sure to Edit?
+                    ID: <p id="edit-did"></p>
+                    Name: <input type="text" id="edit-dname" value=""><br>
+                    Contact: <input type="text" id="edit-dcontact" value=""><br>
+                    Email: <input type="text" id="edit-demail" value=""><br>
+                    Address: <br> <textarea name="" id="edit-daddress" cols="30" rows="10"></textarea><br>
+                    License No : <input type="text" id="edit-dlicense" value=""><br>
+                    Commission: <input type="text" id="edit-dcommission" value=""><br>
+                    Account: <input type="text" id="edit-daccount" value=""><br>
+                </div>
+                <button onclick="confirmEdit()"> Confirm </button>
+                <button  onclick="cancelEdit()"> No</button>
+            </div>
+        </center>
+    </div>
+    <!-- Ended Modal for Edit -->
 
     <?php
         require_once '../footer.php';

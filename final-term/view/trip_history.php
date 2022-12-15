@@ -60,7 +60,7 @@
                                 <th style="width: 150px;">Trip Date</th>
                                 <th style="width: 150px;">Price</th>
                                 <th style="width: 200px;">Driver ID</th>
-                                <th style="width: 100px;">Status</th>
+                                <!-- <th style="width: 100px;">Status</th> -->
                             </tr>
                             <?php
                             while ($row = $result->fetch_assoc()) 
@@ -74,7 +74,7 @@
                                 <td><?php echo $row['trip_date']?></th>
                                 <td><?php echo $row['price']?></th>
                                 <td><?php echo $row['driver_id']?></th>
-                                <td><?php echo $row['status']?></th>
+                                <!-- <td><?php echo $row['status']?></th> -->
                             </tr>
                             <?php
                             }

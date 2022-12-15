@@ -37,6 +37,7 @@ function submitChangeDriver()
       if(this.responseText=="success")
       {
         document.getElementById("change-driver-modal").style.display="none";
+        searchtrip(document.getElementById("search-box").value);
         alert("Driver ID is set as "+driverid+" for trip ID "+tripid);
       }
       else

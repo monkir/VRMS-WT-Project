@@ -25,7 +25,7 @@
                 <th>Trip Date</th>
                 <th>Passenger ID</th>
                 <th>Driver ID</th>
-                <th>Status</th>
+                <!-- <th>Status</th> -->
             </tr>
             <?php
             while($row = $result->fetch_assoc())
@@ -42,7 +42,7 @@
                         <?php echo $row['driver_id']; ?>
                         <Button onclick="changeDriver('<?php echo $row['th_id']; ?>')">Change</Button>
                     </td>
-                    <td style="width: 100px;"><?php echo $row['status']; ?></td>
+                    <!-- <td style="width: 100px;"><?php echo $row['status']; ?></td> -->
                 </tr>
                 <?php
             }

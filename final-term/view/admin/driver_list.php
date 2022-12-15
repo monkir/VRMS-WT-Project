@@ -60,7 +60,6 @@
                             <button onclick="blockDriver('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
                                 Block
                             </button>
-                            <button>Edit</button>
                         <?php
                         }
                         else
@@ -69,10 +68,20 @@
                             <button onclick="unblockDriver('<?php echo $row['userid']; ?>', '<?php echo $row['profile_image']; ?>')">
                                 Unblock
                             </button>
-                            <button>Edit</button>
                         <?php
                         }
                         ?>
+                        <button onclick="editDriver('<?php echo $row['userid']; ?>',
+                                                         '<?php echo $row['name']; ?>',
+                                                         '<?php echo $row['email']; ?>',
+                                                         '<?php echo $row['contact']; ?>',
+                                                         '<?php echo $row['adress']; ?>',
+                                                         '<?php echo $row['license_no']; ?>',
+                                                         '<?php echo $row['commission']; ?>',
+                                                         '<?php echo $row['account']; ?>',
+                                                         '<?php echo $row['profile_image']; ?>'
+                                                         )">Edit
+                        </button>
                         
                     </td>
                 </tr>
