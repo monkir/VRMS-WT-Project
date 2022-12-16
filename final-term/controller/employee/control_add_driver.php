@@ -34,4 +34,8 @@
             echo 'bad-request';
         }
     }
+    else
+    {
+        echo "show something";
+    }
 ?>

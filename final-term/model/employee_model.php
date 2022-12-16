@@ -51,12 +51,15 @@
         $password = $userid . '123';
         $sql= "INSERT INTO users (userid, password,  usertype, status, name, email, contact, adress) 
             VALUES ('{$userid}', '{$password}', '{$usertype}', '{$status}', '{$name}', '{$email}', '{$contact}', '{$adress}')";
+        echo $sql."<br>";
         $result1=mysqli_query($con, $sql);
+
         
         // Inserting data into Drivers table
         $password = $userid . '123';
         $sql= "INSERT INTO drivers (userid, license_no, commission) 
             VALUES ('{$userid}', '{$license_no}', {$commission})";
+        echo $sql."<br>";
         $result2=mysqli_query($con, $sql);
         
         // Closing database connection

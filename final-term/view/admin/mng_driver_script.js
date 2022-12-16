@@ -149,29 +149,25 @@ function validateAddDriver()
   else
   {
     document.getElementById("add-driver-error-message").innerHTML="";
-    return true;
-    addDrivermodal.style.display = "none";
+    //addDrivermodal.style.display = "none";
     //using ajax
     var xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (this.readyState==4 && this.status==200) {
-        document.getElementById.innerHTML=this.responseText;
-        //document.getElementById("userslist").innerHTML=this.responseText;
-        //var response= this.responseText;
-        //alert("Delete: "+response+" Global id:"+globalid);
-        //searchDriver(document.getElementById("search-box").value);
+        alert("Successfully added.");
       }
     }
     xmlhttp.open("POST","../../controller/employee/control_add_Driver.php?",true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send("dname="+dname
-                  +"&dcontact="+demail
+                  +"&demail="+demail
                   +"&dcontact="+dcontact
                   +"&daddress="+daddress
                   +"&dlicense="+dlicense
                   +"&dcommission="+dcommission
                   +"&did="+did
                   );
+    return true;
   }
 }
 function addDriver()

@@ -41,7 +41,7 @@ $root="../";
         ?>
         <p id="message"></p>
         <input type="text" onkeyup="searchDriver(this.value)" id="search-box">
-        <!-- <button onclick="addDriver()">Add Driver</button> -->
+        <button onclick="addDriver()">Add Driver</button>
         <div style="align-content: center;" id="driver-list">
             <!-- User list will be append here -->
         </div>
@@ -112,8 +112,8 @@ $root="../";
                     <input type="submit" value="Submit">
                 </form>
                 <p id="add-driver-error-message"></p>
-                <button onclick="confirmAddDriver()"> Confirm </button>
-                <button  onclick="cancelAddDriver()"> No</button>
+                <!-- <button onclick="confirmAddDriver()"> Confirm </button> -->
+                <button  onclick="cancelAddDriver()"> Cancel</button>
             </div>
     </center>
     </div>
