@@ -1,7 +1,11 @@
 <?php
 
 use LDAP\Result;
-
+    //start session
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
     require_once 'header.php';
     //checking cookie
     $trip_id="";

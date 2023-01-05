@@ -100,7 +100,7 @@
     function goto_login_page()
     {
         session_unset();
-        echo "Password Reseted successfully";
+        //echo "Password Reseted successfully";
         header("location: ../view/login.php");
     }
     function return_to_reset_password_Page()

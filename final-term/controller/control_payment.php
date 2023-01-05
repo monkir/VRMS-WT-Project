@@ -36,7 +36,7 @@
             $current_date=date("Y-m-d");
             if($trip_date < $current_date)
             {
-                echo "wrong date";
+                //echo "wrong date";
                 $status = false;
                 header("location: ../view/book.php?tripid={$trip_id}&err=wrong_date");
             }

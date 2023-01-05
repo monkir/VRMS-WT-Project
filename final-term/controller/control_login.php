@@ -1,9 +1,9 @@
 <?php
     function gotoLoginPage()
     {
-        global $userid, $password, $useridErr, $passwordErr;
+        global $luserid, $password, $useridErr, $passwordErr;
         session_start();
-        $_SESSION['userid']=$userid;
+        $_SESSION['luserid']=$luserid;
         $_SESSION['password']=$password;
         $_SESSION['useridErr']=$useridErr;
         $_SESSION['passwordErr']=$passwordErr;
@@ -11,14 +11,14 @@
     }
     function goto_hompage($userimage)
     {
-        global $userid;
+        global $luserid;
         session_start();
-        $_SESSION['userid']=$userid;
+        $_SESSION['userid']=$luserid;
         $_SESSION['usertype']='passenger';
         $_SESSION['userimage']=$userimage;
         if (isset($_POST['remember']))
         {
-            setcookie("userid", $userid, time()+3600, '/');
+            setcookie("userid", $luserid, time()+3600, '/');
             setcookie("usertype", "passenger", time()+3600, '/');
             setcookie("userimage", $userimage, time()+3600, '/');
         }
@@ -26,14 +26,14 @@
     }
     function goto_adminview($userimage)
     {
-        global $userid;
+        global $luserid;
         session_start();
-        $_SESSION['userid']=$userid;
+        $_SESSION['userid']=$luserid;
         $_SESSION['usertype']='admin';
         $_SESSION['userimage']=$userimage;
         if (isset($_POST['remember']))
         {
-            setcookie("userid", $userid, time()+3600, '/');
+            setcookie("userid", $luserid, time()+3600, '/');
             setcookie("usertype", "admin", time()+3600, '/');
             setcookie("userimage", $userimage, time()+3600, '/');
         }
@@ -47,17 +47,17 @@
         return $data;
     }
     //declaring variables for all input data
-    $userid=$password="";
+    $luserid=$password="";
     //declaring variables for all input error
     $useridErr=$passwordErr="";
     //checking if request method is post
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         // User ID validatoin
-        if(isset($_POST['userid']))
+        if(isset($_POST['luserid']))
         {
-            $userid=test_input($_POST['userid']);
-            if($userid=="")
+            $luserid=test_input($_POST['luserid']);
+            if($luserid=="")
             {
                 $useridErr="Please enter User ID";
             }
@@ -74,7 +74,7 @@
         if($useridErr=="" && $passwordErr=="")
         {
             include "../model/user_model.php";
-            if($userdetails = login($userid, $password))
+            if($userdetails = login($luserid, $password))
             {
                 $userstatus=$userdetails['status'];
                 $usertype=$userdetails['usertype'];

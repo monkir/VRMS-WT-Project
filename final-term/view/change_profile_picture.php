@@ -1,6 +1,10 @@
 <?php
     //checking cookie
     //session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
     require_once "header.php";
     if(isset($_COOKIE['userid']))
     {

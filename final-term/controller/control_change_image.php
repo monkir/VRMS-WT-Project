@@ -29,12 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             } 
             else {
-                echo "File is not an image.";
+                //echo "File is not an image.";
             }
         }
         else
         {
-            echo "No file is uploaded!";
+            //echo "No file is uploaded!";
         }
         
     }
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     // Allow certain file formats
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") 
     {
-        echo "Sorry, only JPG, JPEG& PNG files are allowed.";
+        //echo "Sorry, only JPG, JPEG& PNG files are allowed.";
         ?>
         <script>
             if(!alert("Sorry, only JPG, JPEG& PNG files are allowed."))
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
             //header('location: ../view/profile.php');
             include_once '../model/user_model.php';
-            echo $userid. " ". $newname;
+            //echo $userid. " ". $newname;
             if(!isset($_SESSION)) 
             { 
                 session_start(); 
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         } 
         else 
         {
-            echo "Sorry, there was an error uploading your file.";
+            //echo "Sorry, there was an error uploading your file.";
         }
     }
 }

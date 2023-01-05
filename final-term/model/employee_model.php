@@ -51,7 +51,7 @@
         $password = $userid . '123';
         $sql= "INSERT INTO users (userid, password,  usertype, status, name, email, contact, adress) 
             VALUES ('{$userid}', '{$password}', '{$usertype}', '{$status}', '{$name}', '{$email}', '{$contact}', '{$adress}')";
-        echo $sql."<br>";
+        //echo $sql."<br>";
         $result1=mysqli_query($con, $sql);
 
         
@@ -59,7 +59,7 @@
         $password = $userid . '123';
         $sql= "INSERT INTO drivers (userid, license_no, commission) 
             VALUES ('{$userid}', '{$license_no}', {$commission})";
-        echo $sql."<br>";
+        //echo $sql."<br>";
         $result2=mysqli_query($con, $sql);
         
         // Closing database connection
@@ -102,7 +102,7 @@
         // Inserting data into login table
         $usertype="driver";
         $sql= "UPDATE users SET status='active' WHERE userid='{$userid}' and usertype='{$usertype}'";
-        echo $sql;
+        //echo $sql;
         $result=mysqli_query($con, $sql);
         // Closing database connection
         $con->close();
@@ -178,7 +178,7 @@
         // Deleteing data from login table
         $usertype="passenger";
         $sql= "DELETE FROM users WHERE userid='{$userid}' and usertype='{$usertype}'";
-        echo $sql;
+        //echo $sql;
         $result=mysqli_query($con, $sql);
         // Closing database connection
         $con->close();
@@ -198,7 +198,7 @@
         // Deleteing data from login table
         $usertype="passenger";
         $sql= "UPDATE users SET name='{$name}', email='{$email}', contact='{$contact}', adress='{$address}' WHERE userid='{$userid}' and usertype='{$usertype}'";
-        echo $sql;
+        //echo $sql;
         $result=mysqli_query($con, $sql);
         // Closing database connection
         $con->close();

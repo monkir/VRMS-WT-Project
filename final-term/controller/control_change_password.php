@@ -2,6 +2,7 @@
     require_once "../model/user_model.php";
     session_start();
     $userid=$_SESSION['userid'];
+    $userimage=$_SESSION['userimage'];
     $old_password=$new_password=$new_cpassword="";
     $old_passwordErr=$new_passwordErr=$new_cpasswordErr="";
     if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -57,7 +58,7 @@
             else 
             {
                 $old_passwordErr="Entered wrong Password";
-                echo $old_passwordErr;
+                //echo $old_passwordErr;
                 return_to_change_password_Page();
             }
         }
@@ -74,9 +75,11 @@
     function goto_profile_page()
     {
         $userid = $_SESSION['userid'];
+        $userimage = $_SESSION['userimage'];
         session_unset();
         $_SESSION['status']='active';
         $_SESSION['userid']=$userid;
+        $_SESSION['userimage']=$userimage;
         $_SESSION['message']="password changed successfully";?>
         <script>
             if(!alert("Password changed successfully"))

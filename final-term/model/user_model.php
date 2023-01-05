@@ -35,7 +35,7 @@
         $con = getconnection();
         // Inserting data into login table
         $sql= "UPDATE users SET password = '{$new_password}' WHERE userid='{$userid}' and password='{$old_password}'";
-        echo $sql. "<br>";
+        //echo $sql. "<br>";
         $result=mysqli_query($con, $sql);
         
         // Closing database connection
@@ -55,7 +55,7 @@
         $con = getconnection();
         // Inserting data into login table
         $sql= "UPDATE users SET profile_image = '{$userimage}' WHERE userid='{$userid}'";
-        echo $sql. "<br>";
+        //echo $sql. "<br>";
         $result=mysqli_query($con, $sql);
         
         // Closing database connection
@@ -76,7 +76,7 @@
         // Inserting data into login table
         $sql= "UPDATE users SET password = '{$password}' WHERE 
                 userid='{$userid}' and email = '{$email}' and contact = '{$contact}'";
-        echo $sql. "<br>";
+        //echo $sql. "<br>";
         $result=mysqli_query($con, $sql);
         
         // Closing database connection

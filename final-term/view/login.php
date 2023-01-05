@@ -13,7 +13,7 @@
         header("location: homepage.php?err=already_loggedin");
     }
     //declaring variables for all input data
-    $userid=$password="";
+    $luserid=$password="";
     //declaring variables for all input error
     $useridErr=$passwordErr="";
     //checking if request method is post
@@ -21,9 +21,9 @@
     {
         if($_GET['err'] == 'invalid')
         {
-            if(isset($_SESSION['userid']))
+            if(isset($_SESSION['luserid']))
             {
-                $userid=$_SESSION['userid'];
+                $luserid=$_SESSION['luserid'];
             }
             if(isset($_SESSION['password']))
             {
@@ -79,7 +79,7 @@
                                     <tr>
                                         <td align="left" valign="top">Name: </td>
                                         <td align="left" valign="top">
-                                            <input type="text" name="userid" id="userid" value="<?php echo $userid;?>">
+                                            <input type="text" name="luserid" id="luserid" value="<?php echo $luserid;?>">
                                             <span style="color: red;">*</span><br>
                                             <div id="useridErr" class="err"><?php echo $useridErr;?></div><br>
                                         </td>
