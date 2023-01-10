@@ -191,6 +191,27 @@
             return false;
         }
     }
+    
+    // Deleting a  passenger ID method
+    function deleteDriver($userid)
+    {
+        // Connecting to database
+        $con = getconnection();
+        // Deleteing data from login table
+        $usertype="driver";
+        $sql= "DELETE FROM users WHERE userid='{$userid}' and usertype='{$usertype}'";
+        $result=mysqli_query($con, $sql);
+        // Closing database connection
+        $con->close();
+		if($result)
+        {
+			return true;
+		}
+        else
+        {
+			return false;
+		}
+    }
     function editPassenger($userid, $name, $email, $contact, $address)
     {
         // Connecting to database
